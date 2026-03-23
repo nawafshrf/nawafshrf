@@ -5,24 +5,23 @@ import ToolInterface from "@/components/tools/tool-interface";
 import Link from "next/link";
 import {
   FileText,
-  RefreshCw,
-  CheckCircle,
-  Code,
-  Mail,
-  List,
-  Search,
-  Hash,
+  Database,
+  PenTool,
+  CheckSquare,
+  Calendar,
+  BookOpen,
+  Zap,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   FileText,
-  RefreshCw,
-  CheckCircle,
-  Code,
-  Mail,
-  List,
-  Search,
-  Hash,
+  Database,
+  PenTool,
+  CheckSquare,
+  Calendar,
+  Sigma: FileText,
+  BookOpen,
+  Zap,
 };
 
 export async function generateStaticParams() {
@@ -82,7 +81,7 @@ export default async function ToolPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="bg-gradient-to-b from-blue-50 to-white pt-10 pb-8">
+      <section className="bg-gradient-to-b from-gray-50 to-white pt-10 pb-8">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
             <Link href="/" className="hover:text-gray-900">
@@ -90,14 +89,14 @@ export default async function ToolPage({
             </Link>
             <span>/</span>
             <Link href="/#tools" className="hover:text-gray-900">
-              Tools
+              AI Tools
             </Link>
             <span>/</span>
             <span className="text-gray-900">{tool.name}</span>
           </div>
 
           <div className="flex items-center gap-4 mb-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600">
               <Icon className="h-6 w-6" />
             </div>
             <div>
@@ -120,7 +119,7 @@ export default async function ToolPage({
       <section className="py-12 bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-6">
-            Other Tools You Might Like
+            Other Notion Tools
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {tools
@@ -132,9 +131,9 @@ export default async function ToolPage({
                   <Link
                     key={t.slug}
                     href={`/tools/${t.slug}`}
-                    className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 hover:border-blue-200 hover:shadow-sm transition-all"
+                    className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 hover:border-orange-200 hover:shadow-sm transition-all"
                   >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-600 shrink-0">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-50 text-orange-600 shrink-0">
                       <OtherIcon className="h-4 w-4" />
                     </div>
                     <span className="text-sm font-medium text-gray-700 truncate">

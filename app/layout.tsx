@@ -4,21 +4,23 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "SmartTools AI - Free AI-Powered Tools for Everyone",
+  title: "NotionBoost - AI-Powered Notion Templates & Tools",
   description:
-    "Free AI tools for writers, developers, and marketers. Summarize text, paraphrase, check grammar, explain code, and more. No sign-up required.",
+    "Premium Notion templates and AI tools for productivity. Template shop, AI page enhancer, database generator, formula helper, and more. Publish to Gumroad marketplace.",
   keywords: [
-    "AI tools",
-    "text summarizer",
-    "paraphraser",
-    "grammar checker",
-    "code explainer",
-    "free AI tools",
+    "Notion templates",
+    "Notion tools",
+    "AI Notion",
+    "Notion database generator",
+    "Notion formula helper",
+    "Gumroad templates",
+    "Notion marketplace",
+    "productivity templates",
   ],
   openGraph: {
-    title: "SmartTools AI - Free AI-Powered Tools",
+    title: "NotionBoost - AI-Powered Notion Templates & Tools",
     description:
-      "Free AI tools for writers, developers, and marketers. No sign-up required.",
+      "Premium Notion templates and AI tools. Build, buy, and sell Notion templates with AI assistance.",
     type: "website",
   },
 };

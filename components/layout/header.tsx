@@ -11,20 +11,32 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white font-bold text-sm">
-            ST
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gray-900 text-white font-bold text-sm">
+            N
           </div>
           <span className="text-lg font-bold text-gray-900">
-            SmartTools<span className="text-blue-600">AI</span>
+            Notion<span className="text-orange-500">Boost</span>
           </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
           <Link
+            href="/templates"
+            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            Templates
+          </Link>
+          <Link
             href="/#tools"
             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
-            Tools
+            AI Tools
+          </Link>
+          <Link
+            href="/publish"
+            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            Sell Templates
           </Link>
           <Link
             href="/pricing"
@@ -36,7 +48,7 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-3">
           <Link href="/pricing">
-            <Button size="sm">Upgrade to Pro</Button>
+            <Button size="sm">Go Pro</Button>
           </Link>
         </div>
 
@@ -64,11 +76,25 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-gray-200 bg-white px-4 py-4 space-y-3">
           <Link
+            href="/templates"
+            className="block text-sm text-gray-600 hover:text-gray-900"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Templates
+          </Link>
+          <Link
             href="/#tools"
             className="block text-sm text-gray-600 hover:text-gray-900"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Tools
+            AI Tools
+          </Link>
+          <Link
+            href="/publish"
+            className="block text-sm text-gray-600 hover:text-gray-900"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Sell Templates
           </Link>
           <Link
             href="/pricing"
@@ -79,7 +105,7 @@ export default function Header() {
           </Link>
           <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>
             <Button size="sm" className="w-full">
-              Upgrade to Pro
+              Go Pro
             </Button>
           </Link>
         </div>

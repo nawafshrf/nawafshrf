@@ -92,7 +92,7 @@ export default function ToolInterface({ tool }: { tool: ToolConfig }) {
               <select
                 value={selectedOption}
                 onChange={(e) => setSelectedOption(e.target.value)}
-                className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
               >
                 {tool.options.choices.map((choice) => (
                   <option key={choice.value} value={choice.value}>
@@ -108,7 +108,7 @@ export default function ToolInterface({ tool }: { tool: ToolConfig }) {
             onChange={(e) => setInput(e.target.value)}
             placeholder={tool.inputPlaceholder}
             rows={10}
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm placeholder:text-gray-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 resize-none"
           />
 
           <Button
@@ -166,7 +166,7 @@ export default function ToolInterface({ tool }: { tool: ToolConfig }) {
               {error.includes("Upgrade") && (
                 <a
                   href="/pricing"
-                  className="mt-2 inline-block text-sm font-medium text-blue-600 hover:text-blue-700"
+                  className="mt-2 inline-block text-sm font-medium text-orange-600 hover:text-orange-700"
                 >
                   View Pro plans &rarr;
                 </a>

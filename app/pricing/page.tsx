@@ -5,18 +5,20 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Pricing - SmartTools AI",
+  title: "Pricing - NotionBoost",
   description:
-    "Get unlimited access to all AI tools for just $9.99/month. Free tier available with 5 uses per day.",
+    "Get unlimited access to all AI tools, every template, and Gumroad publishing for $19.99/month. Free tier available.",
 };
 
 const features = [
-  { name: "All 8 AI Tools", free: true, pro: true },
-  { name: "Daily Usage Limit", free: "5/day", pro: "Unlimited" },
-  { name: "No Sign-Up Required", free: true, pro: true },
-  { name: "Priority Processing", free: false, pro: true },
-  { name: "No Ads", free: false, pro: true },
-  { name: "Email Support", free: false, pro: true },
+  { name: "AI Notion Tools", free: "5 uses/day", pro: "Unlimited" },
+  { name: "Browse Templates", free: true, pro: true },
+  { name: "Buy Individual Templates", free: true, pro: true },
+  { name: "All Templates Included", free: false, pro: true },
+  { name: "Template Description Writer", free: false, pro: true },
+  { name: "Gumroad Publishing", free: false, pro: true },
+  { name: "Sales Dashboard", free: false, pro: true },
+  { name: "Priority AI Processing", free: false, pro: true },
 ];
 
 export default function PricingPage() {
@@ -28,8 +30,8 @@ export default function PricingPage() {
             Simple, Transparent Pricing
           </h1>
           <p className="text-gray-600 max-w-xl mx-auto">
-            Start free with 5 uses per day. Upgrade to Pro for unlimited access
-            to all tools.
+            Start free with AI tools. Go Pro for unlimited access, all
+            templates, and Gumroad marketplace publishing.
           </p>
         </div>
 
@@ -43,7 +45,7 @@ export default function PricingPage() {
                 <span className="text-gray-500">/month</span>
               </div>
               <p className="text-sm text-gray-500 mt-2">
-                Perfect for occasional use
+                Try AI tools and browse templates
               </p>
             </CardHeader>
             <CardContent>
@@ -81,18 +83,20 @@ export default function PricingPage() {
           </Card>
 
           {/* Pro Plan */}
-          <Card className="border-blue-200 shadow-lg relative">
+          <Card className="border-orange-200 shadow-lg relative">
             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
               <Badge>Most Popular</Badge>
             </div>
             <CardHeader>
               <CardTitle className="text-lg">Pro</CardTitle>
               <div className="mt-2">
-                <span className="text-4xl font-bold text-gray-900">$9.99</span>
+                <span className="text-4xl font-bold text-gray-900">
+                  $19.99
+                </span>
                 <span className="text-gray-500">/month</span>
               </div>
               <p className="text-sm text-gray-500 mt-2">
-                Unlimited access to all tools
+                Everything you need to build and sell
               </p>
             </CardHeader>
             <CardContent>
@@ -109,7 +113,7 @@ export default function PricingPage() {
                     <span className="text-gray-700">
                       {feature.name}
                       {typeof feature.pro === "string" && (
-                        <span className="text-blue-600 font-medium ml-1">
+                        <span className="text-orange-600 font-medium ml-1">
                           ({feature.pro})
                         </span>
                       )}
@@ -119,7 +123,7 @@ export default function PricingPage() {
               </ul>
               <form action="/api/stripe/checkout" method="POST" className="mt-6">
                 <Button type="submit" className="w-full" size="lg">
-                  Upgrade to Pro
+                  Go Pro
                 </Button>
               </form>
               <p className="text-xs text-gray-400 text-center mt-3">
