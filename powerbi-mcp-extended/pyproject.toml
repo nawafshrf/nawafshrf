@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "powerbi-mcp-extended"
+version = "0.1.0"
+description = "Advanced MCP server extending Microsoft's Power BI MCP with REST API, DAX intelligence, and data analysis tools"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+    "msal>=1.28.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+powerbi-mcp = "powerbi_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/powerbi_mcp"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
