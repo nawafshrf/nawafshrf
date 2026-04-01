@@ -14,7 +14,7 @@ import sys
 
 from mcp.server import FastMCP
 
-from .tools import workspaces, reports, dashboards, datasets, dax, analysis
+from .tools import workspaces, reports, dashboards, datasets, dax, analysis, report_builder
 
 logging.basicConfig(
     level=logging.INFO,
@@ -36,7 +36,9 @@ mcp = FastMCP(
         "\n\n"
         "This server complements microsoft/powerbi-modeling-mcp which handles semantic model "
         "write operations (create tables, measures, relationships). Use both together for "
-        "full coverage."
+        "full coverage.\n\n"
+        "PBIR Report Builder: create_report_definition → add_page_to_report → "
+        "add_visual_to_page → save_report_as_pbir → open with powerbi-desktop-mcp."
     ),
 )
 
@@ -47,6 +49,7 @@ dashboards.register(mcp)
 datasets.register(mcp)
 dax.register(mcp)
 analysis.register(mcp)
+report_builder.register(mcp)
 
 logger.info("Registered %d tools", len(mcp.list_tools()))
 

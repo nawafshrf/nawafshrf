@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "powerbi-desktop-mcp"
+version = "0.1.0"
+description = "MCP server for Power BI Desktop UI automation via Windows accessibility (UIA/pywinauto). Runs on the Windows machine hosting Power BI Desktop and exposes UI interactions as named MCP tools over SSE transport."
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+    "pywinauto>=0.6.8",
+    "psutil>=5.9.0",
+    "Pillow>=10.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+powerbi-desktop-mcp = "powerbi_desktop_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/powerbi_desktop_mcp"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
