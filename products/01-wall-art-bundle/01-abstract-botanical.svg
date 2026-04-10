@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3000" width="2400" height="3000">
+  <title>Abstract Botanical Composition</title>
+  <desc>Wabi-sabi abstract shapes with botanical leaf elements in earth tones</desc>
+
+  <!-- Background -->
+  <rect width="2400" height="3000" fill="#F0EEE9"/>
+
+  <!-- Large terracotta organic shape - slightly imperfect blob -->
+  <path d="M680 850 C720 680, 920 590, 1100 620 C1280 650, 1420 740, 1460 920 C1500 1100, 1440 1280, 1320 1380 C1200 1480, 1000 1500, 860 1440 C720 1380, 640 1200, 640 1040 C640 940, 660 880, 680 850Z"
+        fill="#D8613C" opacity="0.75"/>
+
+  <!-- Sage green organic shape - overlapping -->
+  <path d="M1050 1050 C1120 880, 1340 800, 1520 860 C1700 920, 1820 1080, 1840 1280 C1860 1480, 1780 1660, 1620 1760 C1460 1860, 1260 1870, 1120 1790 C980 1710, 900 1560, 920 1380 C940 1200, 990 1120, 1050 1050Z"
+        fill="#B1C5A4" opacity="0.7"/>
+
+  <!-- Warm sand shape - bottom area -->
+  <path d="M520 1600 C580 1440, 760 1360, 960 1400 C1160 1440, 1320 1560, 1360 1740 C1400 1920, 1340 2080, 1200 2180 C1060 2280, 880 2300, 740 2240 C600 2180, 500 2040, 490 1880 C480 1760, 500 1680, 520 1600Z"
+        fill="#C2A990" opacity="0.65"/>
+
+  <!-- Botanical leaf 1 - elongated eucalyptus-style, sage colored -->
+  <g stroke="#6D6244" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Stem -->
+    <path d="M780 700 C800 780, 830 900, 820 1020 C810 1140, 770 1240, 740 1340"/>
+    <!-- Leaves along stem -->
+    <path d="M800 760 C840 720, 880 700, 900 720 C880 740, 840 760, 800 760"/>
+    <path d="M790 760 C750 720, 710 710, 690 730 C710 750, 750 760, 790 760"/>
+    <path d="M810 850 C850 810, 900 790, 920 810 C900 830, 850 850, 810 850"/>
+    <path d="M800 850 C760 810, 710 800, 690 820 C710 840, 760 850, 800 850"/>
+    <path d="M815 940 C855 900, 900 885, 920 905 C900 925, 855 940, 815 940"/>
+    <path d="M805 940 C765 900, 720 890, 700 910 C720 930, 765 940, 805 940"/>
+    <path d="M810 1040 C845 1005, 885 990, 900 1010 C885 1025, 845 1040, 810 1040"/>
+    <path d="M800 1040 C765 1005, 725 995, 710 1015 C725 1030, 765 1040, 800 1040"/>
+  </g>
+
+  <!-- Botanical leaf 2 - larger, flowing through the composition -->
+  <g stroke="#4E342E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Stem curving through -->
+    <path d="M1500 580 C1480 700, 1440 850, 1420 1000 C1400 1150, 1420 1300, 1460 1440"/>
+    <!-- Leaves -->
+    <path d="M1490 660 C1540 620, 1590 610, 1610 635 C1590 655, 1540 660, 1490 660"/>
+    <path d="M1480 660 C1430 625, 1380 620, 1365 645 C1385 660, 1430 660, 1480 660"/>
+    <path d="M1470 780 C1520 740, 1575 730, 1595 755 C1575 775, 1520 780, 1470 780"/>
+    <path d="M1460 780 C1410 745, 1360 740, 1345 765 C1365 780, 1410 780, 1460 780"/>
+    <path d="M1450 900 C1500 865, 1545 855, 1565 878 C1545 898, 1500 905, 1450 900"/>
+    <path d="M1440 900 C1395 868, 1345 862, 1330 885 C1350 902, 1395 905, 1440 900"/>
+    <path d="M1430 1030 C1475 998, 1520 990, 1538 1012 C1520 1030, 1475 1035, 1430 1030"/>
+    <path d="M1420 1030 C1378 1000, 1335 995, 1320 1018 C1340 1035, 1378 1035, 1420 1030"/>
+    <path d="M1425 1160 C1465 1130, 1505 1125, 1520 1145 C1505 1162, 1465 1165, 1425 1160"/>
+    <path d="M1415 1160 C1380 1132, 1340 1128, 1328 1148 C1345 1165, 1380 1165, 1415 1160"/>
+  </g>
+
+  <!-- Small accent leaf cluster bottom right -->
+  <g stroke="#B1C5A4" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1700 2100 C1720 2040, 1760 2000, 1790 2010 C1770 2050, 1730 2080, 1700 2100"/>
+    <path d="M1700 2100 C1680 2040, 1640 2010, 1620 2030 C1640 2060, 1680 2085, 1700 2100"/>
+    <path d="M1700 2100 C1730 2060, 1780 2050, 1800 2070 C1780 2090, 1740 2100, 1700 2100"/>
+  </g>
+
+  <!-- Subtle texture dots scattered -->
+  <g fill="#6D6244" opacity="0.15">
+    <circle cx="400" cy="500" r="3"/>
+    <circle cx="2000" cy="400" r="2"/>
+    <circle cx="1800" cy="2500" r="3"/>
+    <circle cx="500" cy="2400" r="2"/>
+    <circle cx="1200" cy="300" r="2"/>
+    <circle cx="300" cy="1800" r="3"/>
+    <circle cx="2100" cy="1400" r="2"/>
+    <circle cx="1900" cy="800" r="2"/>
+    <circle cx="600" cy="2700" r="3"/>
+    <circle cx="2000" cy="2200" r="2"/>
+  </g>
+</svg>

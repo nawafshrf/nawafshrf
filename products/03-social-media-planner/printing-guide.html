@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Printing Guide - Social Media Planner</title>
+<style>
+  @page { size: letter; margin: 0.75in; }
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .no-print { display: none; }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #2C2C2C;
+    background: #F0EEE9;
+    line-height: 1.6;
+  }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    background: white;
+    margin: 20px auto;
+    padding: 0.75in;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  @media print { .page { box-shadow: none; margin: 0; padding: 0; } }
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #5F7161;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #5F7161;
+    margin: 25px 0 12px;
+    border-bottom: 2px solid #B1C5A4;
+    padding-bottom: 5px;
+  }
+  p { margin-bottom: 12px; font-size: 14px; }
+  ol, ul { margin: 0 0 15px 25px; font-size: 14px; }
+  li { margin-bottom: 8px; }
+  .tip {
+    background: #EDF2EE;
+    border-left: 4px solid #5F7161;
+    padding: 12px 16px;
+    margin: 15px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+  }
+  .step-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 15px 0;
+  }
+  .step {
+    background: #F8F8F6;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+  }
+  .step-num {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: #5F7161;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .step h3 { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+  .step p { font-size: 13px; margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>How to Print Your Social Media Planner</h1>
+
+  <h2>Quick Start (4 Easy Steps)</h2>
+  <div class="step-grid">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Open the File</h3>
+      <p>Open any of the 4 color theme HTML files in Chrome, Firefox, Safari, or Edge.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Print to PDF</h3>
+      <p>Press Ctrl+P (Windows) or Cmd+P (Mac). Select "Save as PDF" as the destination.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Check Settings</h3>
+      <p>Make sure "Background graphics" is checked. Set margins to "Default" and paper to "Letter".</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Save & Print</h3>
+      <p>Save the PDF, then print on your home printer or upload to a print service.</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>Important:</strong> You MUST check "Background graphics" (or "Background colors and images" in some browsers) for the colors and design to appear correctly.
+  </div>
+
+  <h2>Which Pages to Print Multiple Copies</h2>
+  <ul>
+    <li><strong>Monthly Content Calendar</strong> — Print 12 copies (one per month)</li>
+    <li><strong>Weekly Post Planner</strong> — Print 52 copies (one per week) or as needed</li>
+    <li><strong>Monthly Analytics Review</strong> — Print 12 copies (one per month)</li>
+    <li>All other pages — Print 1 copy each</li>
+  </ul>
+
+  <h2>Suggested Planner Setup</h2>
+  <ol>
+    <li>Print the Brand Voice Guide first -- this is your foundation</li>
+    <li>Set up your Content Pillars to define your themes</li>
+    <li>Use the 100+ Content Prompts page as ongoing inspiration</li>
+    <li>Plan each month with the Content Calendar</li>
+    <li>Break down each week with the Weekly Post Planner</li>
+    <li>Track results with the Monthly Analytics Review</li>
+    <li>Reference the Holiday Calendar for timely content opportunities</li>
+  </ol>
+
+  <h2>4 Color Themes Included</h2>
+  <ul>
+    <li><strong>Sage Green</strong> (social-planner-sage.html) — Fresh, natural feel</li>
+    <li><strong>Dusty Blue</strong> (social-planner-dusty-blue.html) — Calm, professional energy</li>
+    <li><strong>Rose</strong> (social-planner-rose.html) — Warm, creative vibes</li>
+    <li><strong>Warm Neutral</strong> (social-planner-neutral.html) — Classic, elegant look</li>
+  </ul>
+
+  <div class="tip">
+    <strong>Pro Tip:</strong> Keep the 100+ Content Prompts page on your desk or pinned to your wall for instant inspiration whenever you need a post idea!
+  </div>
+
+  <h2>Troubleshooting</h2>
+  <ul>
+    <li><strong>Colors not showing?</strong> Make sure "Background graphics" is checked in print settings.</li>
+    <li><strong>Pages cut off?</strong> Set margins to "Default" or "None" and paper size to "Letter".</li>
+    <li><strong>Blank pages?</strong> Try a different browser. Chrome usually gives the best results.</li>
+    <li><strong>Text too small?</strong> Make sure your browser zoom is set to 100% before printing.</li>
+  </ul>
+</div>
+</body>
+</html>

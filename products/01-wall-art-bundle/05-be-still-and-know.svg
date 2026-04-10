@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3000" width="2400" height="3000">
+  <title>Be Still and Know</title>
+  <desc>Elegant serif typography with botanical accent</desc>
+
+  <!-- Background -->
+  <rect width="2400" height="3000" fill="#F0EEE9"/>
+
+  <!-- "be still" - elegant serif letterforms as paths -->
+  <g fill="#2C2C2C" transform="translate(0, 0)">
+
+    <!-- Letter 'b' -->
+    <path d="M540 1080 L540 1280 C540 1320, 560 1350, 590 1365 C620 1380, 658 1378, 688 1360 C718 1342, 738 1312, 738 1280 C738 1248, 718 1218, 688 1200 C658 1182, 620 1180, 590 1195 C560 1210, 540 1240, 540 1280 M540 1080 L540 1082 M548 1080 L548 1280 C548 1315, 565 1340, 592 1354 C619 1368, 651 1366, 678 1350 C705 1334, 730 1308, 730 1280 C730 1252, 715 1226, 688 1210 C661 1194, 627 1192, 600 1205 C573 1218, 548 1245, 548 1280"
+          stroke="#2C2C2C" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+    <!-- Letter 'e' -->
+    <path d="M790 1280 L930 1280 C930 1248, 910 1218, 880 1200 C850 1182, 812 1180, 782 1195 C752 1210, 735 1240, 735 1280 C735 1320, 755 1350, 785 1365 C815 1380, 852 1378, 882 1360"
+          stroke="#2C2C2C" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- "be still" as styled text with wide tracking - using text element with elegant positioning -->
+  <text x="1200" y="1220" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', 'Palatino Linotype', serif"
+        font-size="240" font-weight="300" letter-spacing="0.25em"
+        fill="#2C2C2C" opacity="0.9">be still</text>
+
+  <!-- Decorative ampersand -->
+  <text x="1200" y="1520" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', 'Palatino Linotype', serif"
+        font-size="180" font-weight="300" font-style="italic"
+        fill="#B1C5A4" opacity="0.7">&amp;</text>
+
+  <!-- "know" -->
+  <text x="1200" y="1820" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', 'Palatino Linotype', serif"
+        font-size="240" font-weight="300" letter-spacing="0.25em"
+        fill="#2C2C2C" opacity="0.9">know</text>
+
+  <!-- Thin decorative lines above and below text -->
+  <line x1="900" y1="1000" x2="1500" y2="1000" stroke="#C2A990" stroke-width="1" opacity="0.4"/>
+  <line x1="900" y1="1920" x2="1500" y2="1920" stroke="#C2A990" stroke-width="1" opacity="0.4"/>
+
+  <!-- Small eucalyptus sprig below text (matching print #2 style) -->
+  <g stroke="#B1C5A4" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(1200, 2100)">
+    <!-- Small stem -->
+    <path d="M0 0 C5 30, 8 65, 5 100 C2 135, -5 165, -10 200"/>
+    <!-- Leaves -->
+    <path d="M3 30 C25 10, 48 8, 55 22 C45 35, 25 38, 3 30"/>
+    <path d="M0 30 C-22 12, -45 10, -52 25 C-42 38, -22 38, 0 30"/>
+    <path d="M5 70 C28 52, 50 50, 58 65 C48 78, 28 80, 5 70"/>
+    <path d="M2 70 C-20 55, -42 53, -50 68 C-40 80, -20 82, 2 70"/>
+    <path d="M4 115 C22 100, 42 98, 48 110 C40 122, 22 124, 4 115"/>
+    <path d="M0 115 C-18 102, -38 100, -44 112 C-36 124, -18 124, 0 115"/>
+    <path d="M0 155 C15 142, 32 140, 38 150 C30 160, 15 162, 0 155"/>
+    <path d="M-3 155 C-16 144, -30 142, -35 152 C-28 162, -16 162, -3 155"/>
+    <!-- Center veins -->
+    <line x1="3" y1="30" x2="48" y2="18" stroke-width="1" opacity="0.5"/>
+    <line x1="0" y1="30" x2="-45" y2="20" stroke-width="1" opacity="0.5"/>
+    <line x1="5" y1="70" x2="50" y2="60" stroke-width="1" opacity="0.5"/>
+    <line x1="2" y1="70" x2="-42" y2="62" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- Subtle texture dots -->
+  <g fill="#6D6244" opacity="0.08">
+    <circle cx="350" cy="600" r="2"/>
+    <circle cx="2050" cy="550" r="2"/>
+    <circle cx="380" cy="2600" r="2"/>
+    <circle cx="2020" cy="2550" r="2"/>
+  </g>
+</svg>

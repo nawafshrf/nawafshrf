@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Printing Guide - Budget Planner</title>
+<style>
+  @page { size: letter; margin: 0.75in; }
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .no-print { display: none; }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #2C2C2C;
+    background: #F0EEE9;
+    line-height: 1.6;
+  }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    background: white;
+    margin: 20px auto;
+    padding: 0.75in;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  @media print { .page { box-shadow: none; margin: 0; padding: 0; } }
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #5F7161;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #5F7161;
+    margin: 25px 0 12px;
+    border-bottom: 2px solid #B1C5A4;
+    padding-bottom: 5px;
+  }
+  p { margin-bottom: 12px; font-size: 14px; }
+  ol, ul { margin: 0 0 15px 25px; font-size: 14px; }
+  li { margin-bottom: 8px; }
+  .tip {
+    background: #EDF2EE;
+    border-left: 4px solid #5F7161;
+    padding: 12px 16px;
+    margin: 15px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+  }
+  .step-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 15px 0;
+  }
+  .step {
+    background: #F8F8F6;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+  }
+  .step-num {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: #5F7161;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .step h3 { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+  .step p { font-size: 13px; margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>How to Print Your Budget Planner</h1>
+
+  <h2>Quick Start (4 Easy Steps)</h2>
+  <div class="step-grid">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Open the File</h3>
+      <p>Open any of the 4 color theme HTML files in Chrome, Firefox, Safari, or Edge.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Print to PDF</h3>
+      <p>Press Ctrl+P (Windows) or Cmd+P (Mac). Select "Save as PDF" as the destination.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Check Settings</h3>
+      <p>Make sure "Background graphics" is checked. Set margins to "Default" and paper to "Letter".</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Save & Print</h3>
+      <p>Save the PDF, then print on your home printer or upload to a print service.</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>Important:</strong> You MUST check "Background graphics" (or "Background colors and images" in some browsers) for the colors and design to appear correctly.
+  </div>
+
+  <h2>Which Pages to Print Multiple Copies</h2>
+  <ul>
+    <li><strong>Monthly Budget Worksheet</strong> — Print 12 copies (one per month)</li>
+    <li><strong>Daily Expense Tracker</strong> — Print 12 copies (one per month)</li>
+    <li><strong>Monthly Bill Calendar</strong> — Print 12 copies (one per month)</li>
+    <li><strong>Monthly Money Review</strong> — Print 12 copies (one per month)</li>
+    <li>All other pages — Print 1 copy each</li>
+  </ul>
+
+  <h2>Paper Recommendations</h2>
+  <ul>
+    <li><strong>Standard:</strong> Regular 20lb printer paper works great for everyday use</li>
+    <li><strong>Premium:</strong> 32lb or 28lb paper for a thicker, more luxurious feel</li>
+    <li><strong>Cover page:</strong> Print on cardstock (65lb) for a beautiful cover</li>
+  </ul>
+
+  <h2>Binding Ideas</h2>
+  <ul>
+    <li><strong>3-ring binder:</strong> Hole-punch pages and organize in a binder with divider tabs</li>
+    <li><strong>Disc-bound system:</strong> Use a disc-bound punch for a lay-flat planner</li>
+    <li><strong>Clipboard:</strong> Clip current month's pages to a clipboard for your desk</li>
+    <li><strong>Stapled booklet:</strong> Staple together for a simple, portable option</li>
+  </ul>
+
+  <h2>4 Color Themes Included</h2>
+  <ul>
+    <li><strong>Sage Green</strong> (budget-planner-sage.html) — Calming, natural feel</li>
+    <li><strong>Dusty Blue</strong> (budget-planner-dusty-blue.html) — Serene, focused energy</li>
+    <li><strong>Warm Neutral</strong> (budget-planner-neutral.html) — Elegant, timeless look</li>
+    <li><strong>Lavender</strong> (budget-planner-lavender.html) — Soft, soothing vibes</li>
+  </ul>
+
+  <div class="tip">
+    <strong>Pro Tip:</strong> You can mix and match color themes! Print your cover in Sage, monthly budgets in Dusty Blue, and savings trackers in Lavender for a custom look.
+  </div>
+
+  <h2>Troubleshooting</h2>
+  <ul>
+    <li><strong>Colors not showing?</strong> Make sure "Background graphics" is checked in print settings.</li>
+    <li><strong>Pages cut off?</strong> Set margins to "Default" or "None" and paper size to "Letter".</li>
+    <li><strong>Blank pages?</strong> Try a different browser. Chrome usually gives the best results.</li>
+    <li><strong>Text too small?</strong> Make sure your browser zoom is set to 100% before printing.</li>
+  </ul>
+</div>
+</body>
+</html>

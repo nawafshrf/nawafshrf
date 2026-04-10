@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3000" width="2400" height="3000">
+  <title>Moon Phases</title>
+  <desc>Seven hand-drawn moon phases in a horizontal row</desc>
+
+  <!-- Background -->
+  <rect width="2400" height="3000" fill="#F0EEE9"/>
+
+  <defs>
+    <!-- Clip paths for each moon phase with slightly wobbly circles -->
+    <clipPath id="moon1-clip">
+      <path d="M208 1500 C210 1418, 252 1348, 318 1312 C384 1276, 458 1278, 522 1316 C586 1354, 628 1422, 628 1504 C628 1586, 586 1654, 522 1690 C458 1726, 384 1726, 318 1690 C252 1654, 212 1586, 208 1500Z"/>
+    </clipPath>
+    <clipPath id="moon2-clip">
+      <path d="M508 1500 C510 1418, 552 1348, 618 1312 C684 1276, 758 1278, 822 1316 C886 1354, 928 1422, 928 1504 C928 1586, 886 1654, 822 1690 C758 1726, 684 1726, 618 1690 C552 1654, 512 1586, 508 1500Z"/>
+    </clipPath>
+    <clipPath id="moon3-clip">
+      <path d="M808 1500 C810 1418, 852 1348, 918 1312 C984 1276, 1058 1278, 1122 1316 C1186 1354, 1228 1422, 1228 1504 C1228 1586, 1186 1654, 1122 1690 C1058 1726, 984 1726, 918 1690 C852 1654, 812 1586, 808 1500Z"/>
+    </clipPath>
+    <clipPath id="moon4-clip">
+      <path d="M1108 1500 C1110 1418, 1152 1348, 1218 1312 C1284 1276, 1358 1278, 1422 1316 C1486 1354, 1528 1422, 1528 1504 C1528 1586, 1486 1654, 1422 1690 C1358 1726, 1284 1726, 1218 1690 C1152 1654, 1112 1586, 1108 1500Z"/>
+    </clipPath>
+    <clipPath id="moon5-clip">
+      <path d="M1408 1500 C1410 1418, 1452 1348, 1518 1312 C1584 1276, 1658 1278, 1722 1316 C1786 1354, 1828 1422, 1828 1504 C1828 1586, 1786 1654, 1722 1690 C1658 1726, 1584 1726, 1518 1690 C1452 1654, 1412 1586, 1408 1500Z"/>
+    </clipPath>
+    <clipPath id="moon6-clip">
+      <path d="M1708 1500 C1710 1418, 1752 1348, 1818 1312 C1884 1276, 1958 1278, 2022 1316 C2086 1354, 2128 1422, 2128 1504 C2128 1586, 2086 1654, 2022 1690 C1958 1726, 1884 1726, 1818 1690 C1752 1654, 1712 1586, 1708 1500Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Moon 1: New Moon (fully dark) -->
+  <g clip-path="url(#moon1-clip)">
+    <rect x="180" y="1280" width="480" height="440" fill="#2C2C2C"/>
+  </g>
+  <path d="M208 1500 C210 1418, 252 1348, 318 1312 C384 1276, 458 1278, 522 1316 C586 1354, 628 1422, 628 1504 C628 1586, 586 1654, 522 1690 C458 1726, 384 1726, 318 1690 C252 1654, 212 1586, 208 1500Z"
+        fill="none" stroke="#2C2C2C" stroke-width="2"/>
+
+  <!-- Moon 2: Waxing Crescent -->
+  <g clip-path="url(#moon2-clip)">
+    <rect x="480" y="1280" width="480" height="440" fill="#2C2C2C"/>
+    <!-- Light crescent on right side -->
+    <path d="M928 1504 C928 1422, 886 1354, 822 1316 C758 1278, 684 1276, 618 1312
+             C700 1360, 750 1430, 750 1504 C750 1578, 700 1648, 618 1690
+             C684 1726, 758 1726, 822 1690 C886 1654, 928 1586, 928 1504Z"
+          fill="#F0EEE9"/>
+  </g>
+
+  <!-- Moon 3: First Quarter (right half lit) -->
+  <g clip-path="url(#moon3-clip)">
+    <rect x="780" y="1280" width="480" height="440" fill="#2C2C2C"/>
+    <rect x="1018" y="1280" width="240" height="440" fill="#F0EEE9"/>
+  </g>
+
+  <!-- Moon 4: Full Moon (fully lit) -->
+  <path d="M1108 1500 C1110 1418, 1152 1348, 1218 1312 C1284 1276, 1358 1278, 1422 1316 C1486 1354, 1528 1422, 1528 1504 C1528 1586, 1486 1654, 1422 1690 C1358 1726, 1284 1726, 1218 1690 C1152 1654, 1112 1586, 1108 1500Z"
+        fill="#F0EEE9" stroke="#2C2C2C" stroke-width="2.5"/>
+  <!-- Subtle crater texture on full moon -->
+  <g fill="none" stroke="#D1D5DB" stroke-width="1" opacity="0.3">
+    <circle cx="1280" cy="1460" r="25"/>
+    <circle cx="1350" cy="1520" r="18"/>
+    <circle cx="1240" cy="1540" r="15"/>
+    <circle cx="1320" cy="1440" r="12"/>
+    <circle cx="1370" cy="1580" r="20"/>
+  </g>
+
+  <!-- Moon 5: Last Quarter (left half lit) -->
+  <g clip-path="url(#moon5-clip)">
+    <rect x="1380" y="1280" width="480" height="440" fill="#2C2C2C"/>
+    <rect x="1380" y="1280" width="240" height="440" fill="#F0EEE9"/>
+  </g>
+
+  <!-- Moon 6: Waning Crescent -->
+  <g clip-path="url(#moon6-clip)">
+    <rect x="1680" y="1280" width="480" height="440" fill="#2C2C2C"/>
+    <!-- Light crescent on left side -->
+    <path d="M1708 1504 C1710 1422, 1752 1354, 1818 1316 C1884 1278, 1958 1276, 2022 1312
+             C1940 1360, 1890 1430, 1890 1504 C1890 1578, 1940 1648, 2022 1690
+             C1958 1726, 1884 1726, 1818 1690 C1752 1654, 1710 1586, 1708 1504Z"
+          fill="#F0EEE9"/>
+  </g>
+
+  <!-- Decorative dots between moons -->
+  <g fill="#2C2C2C" opacity="0.25">
+    <circle cx="468" cy="1500" r="4"/>
+    <circle cx="768" cy="1500" r="4"/>
+    <circle cx="1068" cy="1500" r="4"/>
+    <circle cx="1368" cy="1500" r="4"/>
+    <circle cx="1668" cy="1500" r="4"/>
+  </g>
+
+  <!-- Small star accents scattered above and below -->
+  <g fill="#2C2C2C" opacity="0.12">
+    <circle cx="400" cy="1100" r="3"/>
+    <circle cx="800" cy="1050" r="2"/>
+    <circle cx="1200" cy="1080" r="2.5"/>
+    <circle cx="1600" cy="1060" r="2"/>
+    <circle cx="2000" cy="1100" r="3"/>
+    <circle cx="600" cy="1920" r="2"/>
+    <circle cx="1000" cy="1950" r="2.5"/>
+    <circle cx="1400" cy="1930" r="2"/>
+    <circle cx="1800" cy="1960" r="3"/>
+    <circle cx="300" cy="1200" r="1.5"/>
+    <circle cx="2100" cy="1200" r="1.5"/>
+    <circle cx="500" cy="1850" r="1.5"/>
+    <circle cx="1900" cy="1850" r="1.5"/>
+  </g>
+</svg>

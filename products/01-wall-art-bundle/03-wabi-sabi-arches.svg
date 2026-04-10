@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3000" width="2400" height="3000">
+  <title>Wabi-Sabi Arches</title>
+  <desc>Three nested imperfect arch shapes in earth tones with a floating sun</desc>
+
+  <!-- Background -->
+  <rect width="2400" height="3000" fill="#F0EEE9"/>
+
+  <!-- Outer arch - terracotta, slightly imperfect -->
+  <path d="M420 2340
+           C425 2060, 440 1800, 480 1580
+           C520 1360, 580 1180, 680 1020
+           C780 860, 920 740, 1080 660
+           C1240 580, 1400 570, 1560 630
+           C1720 690, 1840 810, 1930 980
+           C2020 1150, 2070 1360, 2095 1580
+           C2120 1800, 2125 2040, 2120 2340"
+        fill="#D8613C" opacity="0.8"
+        stroke="none"/>
+  <!-- Close the bottom -->
+  <path d="M420 2340 L2120 2340 L2120 2380 L420 2380 Z" fill="#D8613C" opacity="0.8"/>
+
+  <!-- Middle arch - warm sand -->
+  <path d="M620 2340
+           C625 2100, 648 1880, 690 1690
+           C732 1500, 800 1350, 900 1220
+           C1000 1090, 1130 1000, 1280 960
+           C1430 920, 1560 935, 1680 1000
+           C1800 1065, 1890 1180, 1955 1330
+           C2020 1480, 2055 1660, 2072 1870
+           C2089 2080, 2092 2220, 2090 2340"
+        fill="#C2A990" opacity="0.85"
+        stroke="none"/>
+  <path d="M620 2340 L2090 2340 L2090 2380 L620 2380 Z" fill="#C2A990" opacity="0.85"/>
+
+  <!-- Inner arch - sage green -->
+  <path d="M830 2340
+           C835 2140, 858 1960, 900 1800
+           C942 1640, 1010 1510, 1100 1410
+           C1190 1310, 1300 1260, 1420 1250
+           C1540 1240, 1640 1290, 1730 1380
+           C1820 1470, 1885 1600, 1928 1760
+           C1971 1920, 1990 2100, 1995 2340"
+        fill="#B1C5A4" opacity="0.8"
+        stroke="none"/>
+  <path d="M830 2340 L1995 2340 L1995 2380 L830 2380 Z" fill="#B1C5A4" opacity="0.8"/>
+
+  <!-- Inner fill - background color to create the arch opening effect -->
+  <path d="M1040 2340
+           C1045 2180, 1068 2030, 1110 1910
+           C1152 1790, 1210 1700, 1290 1650
+           C1370 1600, 1440 1595, 1520 1630
+           C1600 1665, 1660 1740, 1705 1850
+           C1750 1960, 1772 2100, 1778 2340"
+        fill="#F0EEE9"
+        stroke="none"/>
+  <path d="M1040 2340 L1778 2340 L1778 2380 L1040 2380 Z" fill="#F0EEE9"/>
+
+  <!-- Floating sun/moon circle above arches - slightly imperfect -->
+  <path d="M1170 440
+           C1172 390, 1210 350, 1260 348
+           C1310 346, 1355 382, 1360 430
+           C1365 478, 1332 520, 1282 525
+           C1232 530, 1188 498, 1178 450
+           C1175 445, 1170 442, 1170 440 Z"
+        fill="#D8613C" opacity="0.5"/>
+
+  <!-- Subtle texture marks - wabi-sabi imperfections -->
+  <g stroke="#6D6244" stroke-width="1" opacity="0.08" fill="none" stroke-linecap="round">
+    <path d="M500 1800 C520 1790, 540 1795, 560 1800"/>
+    <path d="M1800 1600 C1820 1590, 1840 1595, 1860 1600"/>
+    <path d="M1100 1400 C1115 1392, 1130 1396, 1145 1400"/>
+    <path d="M700 2100 C720 2092, 740 2096, 760 2100"/>
+    <path d="M1600 1900 C1618 1892, 1636 1896, 1654 1900"/>
+  </g>
+
+  <!-- Ground line -->
+  <line x1="300" y1="2380" x2="2100" y2="2380" stroke="#C2A990" stroke-width="1.5" opacity="0.3"/>
+</svg>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3000" width="2400" height="3000">
+  <title>Constellation Star Map - Orion</title>
+  <desc>Orion constellation rendered as a star map with connecting lines and glow effect</desc>
+
+  <!-- Background -->
+  <rect width="2400" height="3000" fill="#F0EEE9"/>
+
+  <defs>
+    <!-- Star glow filter -->
+    <filter id="star-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <!-- Subtle outer glow for major stars -->
+    <filter id="major-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Connecting lines between stars - dusty blue, thin -->
+  <g stroke="#7BA7BC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5">
+    <!-- Orion's shoulders: Betelgeuse to Bellatrix -->
+    <line x1="720" y1="900" x2="1680" y2="860"/>
+
+    <!-- Betelgeuse down to belt -->
+    <line x1="720" y1="900" x2="920" y2="1440"/>
+
+    <!-- Bellatrix down to belt -->
+    <line x1="1680" y1="860" x2="1480" y2="1440"/>
+
+    <!-- Belt stars connected -->
+    <line x1="920" y1="1440" x2="1200" y2="1420"/>
+    <line x1="1200" y1="1420" x2="1480" y2="1440"/>
+
+    <!-- Belt to lower body -->
+    <line x1="920" y1="1440" x2="680" y2="2060"/>
+    <line x1="1480" y1="1440" x2="1720" y2="2060"/>
+
+    <!-- Sword/Nebula area from belt -->
+    <line x1="1200" y1="1420" x2="1160" y2="1640"/>
+    <line x1="1160" y1="1640" x2="1140" y2="1840"/>
+
+    <!-- Shoulders up to head -->
+    <line x1="720" y1="900" x2="1100" y2="620"/>
+    <line x1="1680" y1="860" x2="1300" y2="620"/>
+    <line x1="1100" y1="620" x2="1200" y2="580"/>
+    <line x1="1300" y1="620" x2="1200" y2="580"/>
+
+    <!-- Arms/bow hints -->
+    <line x1="720" y1="900" x2="480" y2="720"/>
+    <line x1="480" y1="720" x2="380" y2="560"/>
+    <line x1="1680" y1="860" x2="1920" y2="740"/>
+    <line x1="1920" y1="740" x2="2020" y2="600"/>
+  </g>
+
+  <!-- Major stars with glow effect -->
+  <g filter="url(#major-glow)">
+    <!-- Betelgeuse (top left shoulder) - red giant, largest -->
+    <circle cx="720" cy="900" r="14" fill="#D8613C" opacity="0.9"/>
+    <!-- Rigel (bottom right foot) - blue giant -->
+    <circle cx="1720" cy="2060" r="13" fill="#7BA7BC" opacity="0.9"/>
+  </g>
+
+  <g filter="url(#star-glow)">
+    <!-- Bellatrix (top right shoulder) -->
+    <circle cx="1680" cy="860" r="10" fill="#2C2C2C" opacity="0.85"/>
+    <!-- Saiph (bottom left foot) -->
+    <circle cx="680" cy="2060" r="9" fill="#2C2C2C" opacity="0.85"/>
+
+    <!-- Belt stars - Alnitak, Alnilam, Mintaka -->
+    <circle cx="920" cy="1440" r="9" fill="#2C2C2C" opacity="0.85"/>
+    <circle cx="1200" cy="1420" r="10" fill="#2C2C2C" opacity="0.85"/>
+    <circle cx="1480" cy="1440" r="9" fill="#2C2C2C" opacity="0.85"/>
+
+    <!-- Head stars -->
+    <circle cx="1100" cy="620" r="6" fill="#2C2C2C" opacity="0.75"/>
+    <circle cx="1300" cy="620" r="6" fill="#2C2C2C" opacity="0.75"/>
+    <circle cx="1200" cy="580" r="7" fill="#2C2C2C" opacity="0.8"/>
+
+    <!-- Sword/nebula stars -->
+    <circle cx="1160" cy="1640" r="6" fill="#2C2C2C" opacity="0.7"/>
+    <circle cx="1140" cy="1840" r="5" fill="#2C2C2C" opacity="0.65"/>
+
+    <!-- Arm/bow tips -->
+    <circle cx="480" cy="720" r="5" fill="#2C2C2C" opacity="0.7"/>
+    <circle cx="380" cy="560" r="4" fill="#2C2C2C" opacity="0.6"/>
+    <circle cx="1920" cy="740" r="5" fill="#2C2C2C" opacity="0.7"/>
+    <circle cx="2020" cy="600" r="4" fill="#2C2C2C" opacity="0.6"/>
+  </g>
+
+  <!-- Ambient background stars - scattered, varying sizes -->
+  <g fill="#2C2C2C" opacity="0.12">
+    <circle cx="180" cy="340" r="2"/>
+    <circle cx="420" cy="260" r="1.5"/>
+    <circle cx="650" cy="380" r="1.8"/>
+    <circle cx="890" cy="300" r="1.2"/>
+    <circle cx="1500" cy="340" r="1.5"/>
+    <circle cx="1800" cy="420" r="2"/>
+    <circle cx="2100" cy="300" r="1.2"/>
+    <circle cx="2200" cy="500" r="1.8"/>
+    <circle cx="280" cy="1200" r="1.5"/>
+    <circle cx="2120" cy="1100" r="1.8"/>
+    <circle cx="350" cy="1600" r="1.2"/>
+    <circle cx="2200" cy="1500" r="1.5"/>
+    <circle cx="250" cy="2200" r="1.8"/>
+    <circle cx="2180" cy="2300" r="1.2"/>
+    <circle cx="450" cy="2500" r="1.5"/>
+    <circle cx="2050" cy="2500" r="1.8"/>
+    <circle cx="800" cy="2400" r="1.2"/>
+    <circle cx="1600" cy="2450" r="1.5"/>
+    <circle cx="1100" cy="2550" r="1.8"/>
+    <circle cx="1900" cy="2650" r="1.2"/>
+    <circle cx="550" cy="2700" r="1.5"/>
+    <circle cx="1400" cy="2700" r="1.2"/>
+    <circle cx="300" cy="800" r="1"/>
+    <circle cx="2100" cy="900" r="1"/>
+    <circle cx="200" cy="1800" r="1.2"/>
+    <circle cx="2250" cy="1800" r="1"/>
+    <circle cx="1000" cy="2200" r="1"/>
+    <circle cx="1400" cy="2200" r="1.2"/>
+  </g>
+
+  <!-- "ORION" label in small caps -->
+  <text x="1200" y="2620" text-anchor="middle"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="56" font-weight="300" letter-spacing="0.6em"
+        fill="#2C2C2C" opacity="0.35">ORION</text>
+
+  <!-- Subtle decorative line under label -->
+  <line x1="1020" y1="2660" x2="1380" y2="2660" stroke="#C2A990" stroke-width="0.8" opacity="0.25"/>
+</svg>
