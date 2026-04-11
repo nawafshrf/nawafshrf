@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Content Planner 2026 - Sage</title>
+<style>
+:root {
+  --color-primary: #5F7161;
+  --color-secondary: #B1C5A4;
+  --color-accent-bg: #EDF2EE;
+  --color-header-bg: #5F7161;
+  --color-header-text: #FFFFFF;
+  --color-bg: #F0EEE9;
+  --color-page-bg: #FFFFFF;
+  --color-text: #2C2C2C;
+  --color-text-light: #6B7280;
+  --color-lines: #D1D5DB;
+  --color-lines-light: #E5E7EB;
+}
+@page { size: letter; margin: 0.5in; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.4;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.page {
+  width: 7.5in;
+  min-height: 10in;
+  background: var(--color-page-bg);
+  margin: 20px auto;
+  padding: 0.25in;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+}
+.page:last-child { page-break-after: auto; }
+@media print {
+  html, body { background: white; }
+  .page { box-shadow: none; margin: 0; width: 100%; min-height: auto; padding: 0; }
+}
+h1 { color: var(--color-primary); font-weight: 300; letter-spacing: 0.05em; }
+h2 { color: var(--color-primary); font-size: 18px; font-weight: 600; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 2px solid var(--color-secondary); }
+h3 { color: var(--color-primary); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+
+.cover {
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  min-height: 10in; text-align: center;
+  background: linear-gradient(to bottom, var(--color-page-bg) 0%, var(--color-accent-bg) 100%);
+}
+.cover .border-box { border: 1px solid var(--color-primary); padding: 80px 60px; width: 80%; }
+.cover h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 46px; font-weight: 300; color: var(--color-primary); margin-bottom: 20px; letter-spacing: 0.04em; }
+.cover .tagline { font-size: 14px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-text-light); margin-bottom: 40px; }
+.cover .divider { width: 80px; height: 1px; background: var(--color-primary); margin: 30px auto; }
+.cover .year { font-family: Georgia, serif; font-size: 72px; font-weight: 300; color: var(--color-primary); margin: 30px 0; }
+.cover .belongs { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-text-light); margin-top: 30px; }
+.cover .belongs-line { display: block; width: 280px; border-bottom: 1px solid var(--color-text-light); margin: 10px auto; height: 24px; }
+
+.page-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  padding-bottom: 10px; margin-bottom: 16px; border-bottom: 2px solid var(--color-primary);
+}
+.page-header .title-block h1 { font-family: Georgia, serif; font-size: 28px; font-weight: 300; letter-spacing: 0.04em; }
+.page-header .title-block .sub { font-size: 11px; color: var(--color-text-light); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
+.page-header .meta { font-size: 11px; color: var(--color-text-light); text-align: right; }
+.page-header .meta .field { display: inline-block; margin-left: 12px; }
+.page-header .meta .field span { display: inline-block; border-bottom: 1px solid var(--color-text-light); min-width: 80px; height: 16px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 11px; }
+table th { background: var(--color-header-bg); color: var(--color-header-text); padding: 7px 8px; text-align: left; font-weight: 500; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; }
+table td { padding: 8px; border-bottom: 1px solid var(--color-lines-light); height: 26px; }
+table tr:nth-child(even) td { background: var(--color-accent-bg); }
+table .category-row td { background: var(--color-secondary) !important; font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 0.05em; padding: 6px 8px; }
+
+.cb { display: inline-block; width: 12px; height: 12px; border: 1.5px solid var(--color-primary); vertical-align: middle; margin-right: 3px; border-radius: 2px; }
+.line { display: block; width: 100%; border-bottom: 1px solid var(--color-lines); height: 22px; margin-bottom: 6px; }
+.short-line { display: inline-block; min-width: 120px; border-bottom: 1px solid var(--color-lines); height: 18px; margin: 0 4px; }
+.fl { display: inline-block; min-width: 80px; border-bottom: 1px solid var(--color-lines); height: 14px; margin: 0 4px; }
+
+.toc-list { list-style: none; }
+.toc-list li { padding: 10px 0; border-bottom: 1px dotted var(--color-lines); display: flex; align-items: center; font-size: 13px; }
+.toc-list li .num { display: inline-block; width: 30px; height: 30px; border-radius: 50%; background: var(--color-primary); color: white; text-align: center; line-height: 30px; font-size: 12px; font-weight: 600; margin-right: 14px; flex-shrink: 0; }
+.toc-list li .name { flex: 1; color: var(--color-text); }
+.toc-list li .hint { font-size: 10px; color: var(--color-text-light); font-style: italic; }
+.instructions { margin-top: 20px; padding: 14px; background: var(--color-accent-bg); border-left: 4px solid var(--color-primary); font-size: 11px; line-height: 1.6; }
+
+/* BRAND VOICE */
+.voice-section { margin-bottom: 14px; }
+.voice-section h3 { margin-bottom: 8px; }
+.tone-scale { display: flex; align-items: center; padding: 8px 0; font-size: 11px; }
+.tone-scale .label-l, .tone-scale .label-r { width: 110px; color: var(--color-text-light); }
+.tone-scale .label-r { text-align: right; }
+.tone-scale .track { flex: 1; height: 14px; border: 1.5px solid var(--color-primary); border-radius: 7px; margin: 0 12px; position: relative; background: white; }
+.tone-scale .track::before { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 14px; height: 14px; border: 2px solid var(--color-primary); border-radius: 50%; background: var(--color-secondary); }
+.vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.vocab-col h4 { font-size: 11px; color: var(--color-primary); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* CALENDAR */
+.sm-calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: var(--color-lines); border: 1px solid var(--color-lines); }
+.sm-calendar .day-header { background: var(--color-header-bg); color: var(--color-header-text); padding: 6px; text-align: center; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
+.sm-calendar .day-cell { background: white; min-height: 90px; padding: 4px; font-size: 8px; }
+.sm-calendar .day-cell .day-num { color: var(--color-text-light); font-weight: 600; font-size: 9px; }
+.sm-calendar .day-cell .platforms { margin: 3px 0; font-size: 7px; color: var(--color-text-light); }
+.sm-calendar .day-cell .platforms span { display: inline-block; width: 12px; height: 12px; border: 1px solid var(--color-lines); border-radius: 50%; text-align: center; line-height: 10px; font-size: 6px; margin-right: 1px; }
+.sm-calendar .day-cell .content-line { border-bottom: 1px solid var(--color-lines-light); height: 10px; margin-top: 2px; }
+
+/* WEEKLY CARDS */
+.day-card { border: 1.5px solid var(--color-lines); margin-bottom: 8px; padding: 8px; border-radius: 4px; }
+.day-card .day-label { background: var(--color-header-bg); color: white; padding: 4px 10px; margin: -8px -8px 6px -8px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+.day-card .row { font-size: 10px; padding: 2px 0; color: var(--color-text-light); }
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+/* QUADRANT */
+.quadrant { border: 1.5px solid var(--color-primary); padding: 8px; }
+.quadrant .q-title { background: var(--color-header-bg); color: white; padding: 5px 10px; margin: -8px -8px 6px -8px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.quadrant table td { padding: 4px; height: 20px; font-size: 9px; }
+.quadrant table th { font-size: 8px; padding: 4px; }
+
+/* HASHTAG */
+.hashtag-block { border: 1.5px solid var(--color-primary); padding: 8px; }
+.hashtag-block .hb-title { font-size: 10px; color: var(--color-primary); font-weight: 600; text-transform: uppercase; margin-bottom: 4px; }
+.hashtag-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; font-size: 8px; }
+.hashtag-slot { border: 1px solid var(--color-lines); padding: 3px; background: white; }
+
+/* PLATFORM BADGES */
+.platform-badge { display: inline-block; padding: 3px 6px; border: 1px solid var(--color-primary); border-radius: 10px; font-size: 9px; color: var(--color-primary); margin-right: 2px; background: white; font-weight: 600; }
+
+/* MONTHLY HOLIDAYS */
+.month-card { border: 1px solid var(--color-lines); padding: 8px; min-height: 140px; font-size: 9px; }
+.month-card h4 { background: var(--color-header-bg); color: white; padding: 4px 6px; margin: -8px -8px 6px -8px; font-size: 11px; text-transform: uppercase; }
+.month-card .date-item { padding: 2px 0; border-bottom: 1px dotted var(--color-lines); color: var(--color-text); }
+
+/* THANK YOU */
+.thank-you { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 10in; text-align: center; background: linear-gradient(to bottom, var(--color-accent-bg) 0%, var(--color-page-bg) 100%); }
+.thank-you .border-box { border: 1px solid var(--color-primary); padding: 80px 60px; max-width: 75%; }
+.thank-you h1 { font-family: Georgia, serif; font-size: 62px; font-weight: 300; margin-bottom: 20px; }
+.thank-you .heart { font-size: 32px; color: var(--color-secondary); margin: 20px 0; }
+.thank-you p { font-size: 14px; color: var(--color-text); line-height: 1.8; margin-bottom: 14px; }
+.thank-you .divider { width: 60px; height: 1px; background: var(--color-primary); margin: 25px auto; }
+.thank-you .small { font-size: 11px; color: var(--color-text-light); font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- ========== PAGE 1: COVER ========== -->
+<div class="page cover">
+  <div class="border-box">
+    <div class="tagline">&mdash; Plan. Create. Grow. &mdash;</div>
+    <h1>Social Media<br>Content Planner</h1>
+    <div class="divider"></div>
+    <div class="year">2026</div>
+    <div class="divider"></div>
+    <div class="belongs">This Planner Belongs To</div>
+    <span class="belongs-line"></span>
+    <div class="belongs" style="margin-top:20px;">Business / Brand</div>
+    <span class="belongs-line"></span>
+  </div>
+</div>
+
+<!-- ========== PAGE 2: TABLE OF CONTENTS ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>What's Inside</h1><div class="sub">Your Complete Social Media System</div></div>
+  </div>
+  <ul class="toc-list">
+    <li><span class="num">1</span><span class="name">Brand Voice Guide</span><span class="hint">Define your personality &amp; tone</span></li>
+    <li><span class="num">2</span><span class="name">Monthly Content Calendar</span><span class="hint">Print 12 copies &mdash; one per month</span></li>
+    <li><span class="num">3</span><span class="name">Weekly Post Planner</span><span class="hint">Print as needed</span></li>
+    <li><span class="num">4</span><span class="name">Monthly Analytics Review</span><span class="hint">Print 12 copies</span></li>
+    <li><span class="num">5</span><span class="name">Content Ideas Bank</span><span class="hint">4-quadrant brainstorm</span></li>
+    <li><span class="num">6</span><span class="name">Content Pillar Planner</span><span class="hint">Define your 5 core themes</span></li>
+    <li><span class="num">7</span><span class="name">100+ Content Prompts</span><span class="hint">Never run out of ideas</span></li>
+    <li><span class="num">8</span><span class="name">Hashtag Organizer</span><span class="hint">6 sets + performance tracking</span></li>
+    <li><span class="num">9</span><span class="name">Campaign Planner</span><span class="hint">Plan launches &amp; promotions</span></li>
+    <li><span class="num">10</span><span class="name">Follower Growth Tracker</span><span class="hint">Track 7 platforms for 12 months</span></li>
+    <li><span class="num">11</span><span class="name">Holiday &amp; Key Dates Calendar</span><span class="hint">Every major date for the year</span></li>
+  </ul>
+  <div class="instructions">
+    <strong>How to use:</strong> Open in Chrome, Firefox, Safari, or Edge. Press <strong>Ctrl+P</strong> (Windows) or <strong>Cmd+P</strong> (Mac) &gt; "Save as PDF". Enable "Background graphics". Choose Letter paper.
+  </div>
+</div>
+
+<!-- ========== PAGE 3: BRAND VOICE GUIDE ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Brand Voice Guide</h1><div class="sub">Define your unique voice</div></div>
+  </div>
+
+  <div class="voice-section">
+    <h3>Brand Personality</h3>
+    <table>
+      <tr><th style="width:50%">We ARE...</th><th style="width:50%">We are NOT...</th></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="voice-section">
+    <h3>Tone of Voice</h3>
+    <div class="tone-scale"><span class="label-l">Formal</span><div class="track"></div><span class="label-r">Casual</span></div>
+    <div class="tone-scale"><span class="label-l">Serious</span><div class="track"></div><span class="label-r">Playful</span></div>
+    <div class="tone-scale"><span class="label-l">Respectful</span><div class="track"></div><span class="label-r">Irreverent</span></div>
+    <div class="tone-scale"><span class="label-l">Enthusiastic</span><div class="track"></div><span class="label-r">Matter-of-fact</span></div>
+  </div>
+
+  <div class="voice-section">
+    <h3>Our Vocabulary</h3>
+    <div class="vocab-grid">
+      <div class="vocab-col"><h4>Words We Use</h4>
+        <span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span>
+      </div>
+      <div class="vocab-col"><h4>Words We Avoid</h4>
+        <span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="voice-section">
+    <h3>Caption Formula</h3>
+    <div style="padding:8px;background:var(--color-accent-bg);font-size:11px;line-height:1.8;">
+      <strong>Hook:</strong> <span class="fl" style="min-width:85%"></span><br>
+      <strong>Body:</strong> <span class="fl" style="min-width:85%"></span><br>
+      <strong>CTA:</strong> <span class="fl" style="min-width:86%"></span><br>
+      <strong>Hashtags:</strong> Set #<span class="fl" style="min-width:30px"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PAGE 4: MONTHLY CONTENT CALENDAR ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Content Calendar</h1><div class="sub">Your month at a glance</div></div>
+    <div class="meta"><span class="field">Month <span></span></span><span class="field">Year <span style="min-width:50px"></span></span></div>
+  </div>
+
+  <div style="margin-bottom:10px;padding:8px;background:var(--color-accent-bg);border-left:3px solid var(--color-primary);font-size:11px;">
+    <strong>Monthly Theme:</strong> <span class="fl" style="min-width:42%"></span>
+    <strong style="margin-left:10px;">Campaign:</strong> <span class="fl" style="min-width:32%"></span>
+  </div>
+
+  <div class="sm-calendar">
+    <div class="day-header">Mon</div><div class="day-header">Tue</div><div class="day-header">Wed</div><div class="day-header">Thu</div><div class="day-header">Fri</div><div class="day-header">Sat</div><div class="day-header">Sun</div>
+    <div class="day-cell"><div class="day-num">1</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">2</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">3</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">4</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">5</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">6</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">7</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">8</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">9</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">10</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">11</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">12</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">13</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">14</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">15</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">16</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">17</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">18</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">19</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">20</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">21</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">22</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">23</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">24</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">25</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">26</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">27</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">28</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">29</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">30</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"><div class="day-num">31</div><div class="platforms"><span>IG</span><span>FB</span><span>TT</span><span>X</span></div><div class="content-line"></div><div class="content-line"></div></div>
+    <div class="day-cell"></div><div class="day-cell"></div><div class="day-cell"></div><div class="day-cell"></div>
+  </div>
+
+  <div style="margin-top:10px;font-size:10px;color:var(--color-text-light);text-align:center;">Platform Legend: IG Instagram &bull; FB Facebook &bull; TT TikTok &bull; X Twitter &bull; LI LinkedIn &bull; PI Pinterest &bull; YT YouTube</div>
+</div>
+
+<!-- ========== PAGE 5: WEEKLY POST PLANNER ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Weekly Post Planner</h1><div class="sub">Plan every post with intention</div></div>
+    <div class="meta"><span class="field">Week of <span style="min-width:100px"></span></span></div>
+  </div>
+
+  <div style="margin-bottom:8px;padding:6px 10px;background:var(--color-accent-bg);font-size:10px;">
+    <strong>This week's focus:</strong> <span class="fl" style="min-width:80%"></span>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Monday</div>
+    <div class="row"><strong>Platforms:</strong> <span class="cb"></span>IG <span class="cb"></span>FB <span class="cb"></span>TT <span class="cb"></span>X <span class="cb"></span>LI <span class="cb"></span>PI <span class="cb"></span>YT</div>
+    <div class="row"><strong>Type:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video <span class="cb"></span>Pin</div>
+    <div class="row"><strong>Topic / Caption:</strong> <span class="fl" style="min-width:74%"></span></div>
+    <div class="row"><strong>Asset:</strong> <span class="fl" style="min-width:30%"></span> <strong>Hashtag Set #</strong><span class="fl" style="min-width:25px"></span> <strong>Time:</strong><span class="fl" style="min-width:45px"></span></div>
+    <div class="row"><strong>Status:</strong> <span class="cb"></span>Draft <span class="cb"></span>Scheduled <span class="cb"></span>Posted</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Tuesday</div>
+    <div class="row"><strong>Platforms:</strong> <span class="cb"></span>IG <span class="cb"></span>FB <span class="cb"></span>TT <span class="cb"></span>X <span class="cb"></span>LI <span class="cb"></span>PI <span class="cb"></span>YT</div>
+    <div class="row"><strong>Type:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video <span class="cb"></span>Pin</div>
+    <div class="row"><strong>Topic / Caption:</strong> <span class="fl" style="min-width:74%"></span></div>
+    <div class="row"><strong>Asset:</strong> <span class="fl" style="min-width:30%"></span> <strong>Hashtag Set #</strong><span class="fl" style="min-width:25px"></span> <strong>Time:</strong><span class="fl" style="min-width:45px"></span></div>
+    <div class="row"><strong>Status:</strong> <span class="cb"></span>Draft <span class="cb"></span>Scheduled <span class="cb"></span>Posted</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Wednesday</div>
+    <div class="row"><strong>Platforms:</strong> <span class="cb"></span>IG <span class="cb"></span>FB <span class="cb"></span>TT <span class="cb"></span>X <span class="cb"></span>LI <span class="cb"></span>PI <span class="cb"></span>YT</div>
+    <div class="row"><strong>Type:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video <span class="cb"></span>Pin</div>
+    <div class="row"><strong>Topic / Caption:</strong> <span class="fl" style="min-width:74%"></span></div>
+    <div class="row"><strong>Asset:</strong> <span class="fl" style="min-width:30%"></span> <strong>Hashtag Set #</strong><span class="fl" style="min-width:25px"></span> <strong>Time:</strong><span class="fl" style="min-width:45px"></span></div>
+    <div class="row"><strong>Status:</strong> <span class="cb"></span>Draft <span class="cb"></span>Scheduled <span class="cb"></span>Posted</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Thursday</div>
+    <div class="row"><strong>Platforms:</strong> <span class="cb"></span>IG <span class="cb"></span>FB <span class="cb"></span>TT <span class="cb"></span>X <span class="cb"></span>LI <span class="cb"></span>PI <span class="cb"></span>YT</div>
+    <div class="row"><strong>Type:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video <span class="cb"></span>Pin</div>
+    <div class="row"><strong>Topic / Caption:</strong> <span class="fl" style="min-width:74%"></span></div>
+    <div class="row"><strong>Asset:</strong> <span class="fl" style="min-width:30%"></span> <strong>Hashtag Set #</strong><span class="fl" style="min-width:25px"></span> <strong>Time:</strong><span class="fl" style="min-width:45px"></span></div>
+    <div class="row"><strong>Status:</strong> <span class="cb"></span>Draft <span class="cb"></span>Scheduled <span class="cb"></span>Posted</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Friday</div>
+    <div class="row"><strong>Platforms:</strong> <span class="cb"></span>IG <span class="cb"></span>FB <span class="cb"></span>TT <span class="cb"></span>X <span class="cb"></span>LI <span class="cb"></span>PI <span class="cb"></span>YT</div>
+    <div class="row"><strong>Type:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video <span class="cb"></span>Pin</div>
+    <div class="row"><strong>Topic / Caption:</strong> <span class="fl" style="min-width:74%"></span></div>
+    <div class="row"><strong>Asset:</strong> <span class="fl" style="min-width:30%"></span> <strong>Hashtag Set #</strong><span class="fl" style="min-width:25px"></span> <strong>Time:</strong><span class="fl" style="min-width:45px"></span></div>
+    <div class="row"><strong>Status:</strong> <span class="cb"></span>Draft <span class="cb"></span>Scheduled <span class="cb"></span>Posted</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Saturday</div>
+    <div class="row"><strong>Platforms:</strong> <span class="cb"></span>IG <span class="cb"></span>FB <span class="cb"></span>TT <span class="cb"></span>X <span class="cb"></span>LI <span class="cb"></span>PI <span class="cb"></span>YT</div>
+    <div class="row"><strong>Type:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video <span class="cb"></span>Pin</div>
+    <div class="row"><strong>Topic / Caption:</strong> <span class="fl" style="min-width:74%"></span></div>
+    <div class="row"><strong>Asset:</strong> <span class="fl" style="min-width:30%"></span> <strong>Hashtag Set #</strong><span class="fl" style="min-width:25px"></span> <strong>Time:</strong><span class="fl" style="min-width:45px"></span></div>
+    <div class="row"><strong>Status:</strong> <span class="cb"></span>Draft <span class="cb"></span>Scheduled <span class="cb"></span>Posted</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Sunday</div>
+    <div class="row"><strong>Platforms:</strong> <span class="cb"></span>IG <span class="cb"></span>FB <span class="cb"></span>TT <span class="cb"></span>X <span class="cb"></span>LI <span class="cb"></span>PI <span class="cb"></span>YT</div>
+    <div class="row"><strong>Type:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video <span class="cb"></span>Pin</div>
+    <div class="row"><strong>Topic / Caption:</strong> <span class="fl" style="min-width:74%"></span></div>
+    <div class="row"><strong>Asset:</strong> <span class="fl" style="min-width:30%"></span> <strong>Hashtag Set #</strong><span class="fl" style="min-width:25px"></span> <strong>Time:</strong><span class="fl" style="min-width:45px"></span></div>
+    <div class="row"><strong>Status:</strong> <span class="cb"></span>Draft <span class="cb"></span>Scheduled <span class="cb"></span>Posted</div>
+  </div>
+</div>
+
+<!-- ========== PAGE 6: MONTHLY ANALYTICS REVIEW ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Monthly Analytics</h1><div class="sub">Track what's working</div></div>
+    <div class="meta"><span class="field">Month <span></span></span><span class="field">Year <span style="min-width:50px"></span></span></div>
+  </div>
+
+  <table style="margin-bottom:10px;">
+    <tr><th style="width:14%">Platform</th><th style="width:17%">Followers Start</th><th style="width:17%">Followers End</th><th style="width:13%">Growth</th><th style="width:14%">Reach</th><th style="width:13%">Engage %</th><th style="width:12%">Clicks</th></tr>
+    <tr class="category-row"><td colspan="7">Instagram</td></tr>
+    <tr><td style="font-weight:600">IG</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="7">Facebook</td></tr>
+    <tr><td style="font-weight:600">FB</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="7">TikTok</td></tr>
+    <tr><td style="font-weight:600">TT</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="7">Twitter / X</td></tr>
+    <tr><td style="font-weight:600">X</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="7">LinkedIn</td></tr>
+    <tr><td style="font-weight:600">LI</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="7">Pinterest</td></tr>
+    <tr><td style="font-weight:600">PI</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="7">YouTube</td></tr>
+    <tr><td style="font-weight:600">YT</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <h3 style="margin-top:14px;">Top Performing Posts</h3>
+  <table>
+    <tr><th>Platform</th><th>Post Description</th><th>Reach</th><th>Engagement</th></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <h3 style="margin-top:14px;">Goals vs Actuals</h3>
+  <table>
+    <tr><th>Goal</th><th>Target</th><th>Actual</th><th>Notes</th></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <h3 style="margin-top:14px;">Key Insights &amp; Learnings</h3>
+  <span class="line"></span><span class="line"></span><span class="line"></span>
+</div>
+
+<!-- ========== PAGE 7: CONTENT IDEAS BANK ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Content Ideas Bank</h1><div class="sub">Brainstorm &amp; organize your ideas</div></div>
+  </div>
+
+  <div class="grid-2" style="gap:10px;">
+    <div class="quadrant">
+      <div class="q-title">Educational</div>
+      <table>
+        <tr><th style="width:60%">Idea</th><th>Platform</th><th>Priority</th></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="quadrant">
+      <div class="q-title">Behind the Scenes</div>
+      <table>
+        <tr><th style="width:60%">Idea</th><th>Platform</th><th>Priority</th></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="quadrant">
+      <div class="q-title">Engagement</div>
+      <table>
+        <tr><th style="width:60%">Idea</th><th>Platform</th><th>Priority</th></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="quadrant">
+      <div class="q-title">Promotional</div>
+      <table>
+        <tr><th style="width:60%">Idea</th><th>Platform</th><th>Priority</th></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PAGE 8: CONTENT PILLAR PLANNER ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Content Pillars</h1><div class="sub">Your 5 core content themes</div></div>
+  </div>
+
+  <div style="font-size:11px;margin-bottom:12px;color:var(--color-text-light);font-style:italic;text-align:center;">
+    Define 4&ndash;5 core themes that guide all your content. Every post should support one of these pillars.
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Pillar 1</div>
+    <div class="row"><strong>Name:</strong> <span class="fl" style="min-width:85%"></span></div>
+    <div class="row"><strong>Description:</strong> <span class="fl" style="min-width:80%"></span></div>
+    <div class="row"><strong>Frequency:</strong> <span class="fl" style="min-width:20%"></span> times per week / month</div>
+    <div class="row"><strong>Example Topics:</strong> <span class="fl" style="min-width:25%"></span> &bull; <span class="fl" style="min-width:25%"></span> &bull; <span class="fl" style="min-width:18%"></span></div>
+    <div class="row"><strong>Content Types:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Pillar 2</div>
+    <div class="row"><strong>Name:</strong> <span class="fl" style="min-width:85%"></span></div>
+    <div class="row"><strong>Description:</strong> <span class="fl" style="min-width:80%"></span></div>
+    <div class="row"><strong>Frequency:</strong> <span class="fl" style="min-width:20%"></span> times per week / month</div>
+    <div class="row"><strong>Example Topics:</strong> <span class="fl" style="min-width:25%"></span> &bull; <span class="fl" style="min-width:25%"></span> &bull; <span class="fl" style="min-width:18%"></span></div>
+    <div class="row"><strong>Content Types:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Pillar 3</div>
+    <div class="row"><strong>Name:</strong> <span class="fl" style="min-width:85%"></span></div>
+    <div class="row"><strong>Description:</strong> <span class="fl" style="min-width:80%"></span></div>
+    <div class="row"><strong>Frequency:</strong> <span class="fl" style="min-width:20%"></span> times per week / month</div>
+    <div class="row"><strong>Example Topics:</strong> <span class="fl" style="min-width:25%"></span> &bull; <span class="fl" style="min-width:25%"></span> &bull; <span class="fl" style="min-width:18%"></span></div>
+    <div class="row"><strong>Content Types:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Pillar 4</div>
+    <div class="row"><strong>Name:</strong> <span class="fl" style="min-width:85%"></span></div>
+    <div class="row"><strong>Description:</strong> <span class="fl" style="min-width:80%"></span></div>
+    <div class="row"><strong>Frequency:</strong> <span class="fl" style="min-width:20%"></span> times per week / month</div>
+    <div class="row"><strong>Example Topics:</strong> <span class="fl" style="min-width:25%"></span> &bull; <span class="fl" style="min-width:25%"></span> &bull; <span class="fl" style="min-width:18%"></span></div>
+    <div class="row"><strong>Content Types:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video</div>
+  </div>
+  <div class="day-card">
+    <div class="day-label">Pillar 5</div>
+    <div class="row"><strong>Name:</strong> <span class="fl" style="min-width:85%"></span></div>
+    <div class="row"><strong>Description:</strong> <span class="fl" style="min-width:80%"></span></div>
+    <div class="row"><strong>Frequency:</strong> <span class="fl" style="min-width:20%"></span> times per week / month</div>
+    <div class="row"><strong>Example Topics:</strong> <span class="fl" style="min-width:25%"></span> &bull; <span class="fl" style="min-width:25%"></span> &bull; <span class="fl" style="min-width:18%"></span></div>
+    <div class="row"><strong>Content Types:</strong> <span class="cb"></span>Post <span class="cb"></span>Reel <span class="cb"></span>Story <span class="cb"></span>Carousel <span class="cb"></span>Video</div>
+  </div>
+</div>
+
+<!-- ========== PAGE 9: 100+ CONTENT PROMPTS ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>100+ Content Prompts</h1><div class="sub">Never run out of ideas</div></div>
+  </div>
+
+  <div class="grid-4" style="gap:8px;font-size:8.5px;line-height:1.5;">
+    <div class="quadrant">
+      <div class="q-title">Educational</div>
+      <ol style="padding-left:16px;">
+        <li>Share 3 tips about [topic]</li>
+        <li>Explain how to [skill] in 5 steps</li>
+        <li>Myth vs. fact about [topic]</li>
+        <li>Common mistakes in [your niche]</li>
+        <li>Step-by-step tutorial</li>
+        <li>Beginner's guide to [topic]</li>
+        <li>Tools &amp; resources I use</li>
+        <li>Best practices for [skill]</li>
+        <li>What I wish I knew when starting</li>
+        <li>Glossary of terms</li>
+        <li>Comparison: X vs Y</li>
+        <li>Quick hack to save time</li>
+        <li>Case study breakdown</li>
+        <li>Before and after transformation</li>
+        <li>Industry statistics you need to know</li>
+        <li>5 questions to ask yourself</li>
+        <li>Book/podcast recommendations</li>
+        <li>Top lessons learned this year</li>
+        <li>The 80/20 rule of [topic]</li>
+        <li>Frequently asked questions</li>
+        <li>Debunking a popular belief</li>
+        <li>Beginner vs. expert approach</li>
+        <li>Checklist for [task]</li>
+        <li>What "X" really means</li>
+        <li>How-to with pictures</li>
+      </ol>
+    </div>
+    <div class="quadrant">
+      <div class="q-title">Engagement</div>
+      <ol style="padding-left:16px;">
+        <li>This or that?</li>
+        <li>Fill in the blank: ___</li>
+        <li>What's your opinion on...?</li>
+        <li>Rate this from 1&ndash;10</li>
+        <li>Would you rather?</li>
+        <li>Caption this photo</li>
+        <li>Tag someone who needs this</li>
+        <li>Comment your biggest struggle</li>
+        <li>Poll: option A or B?</li>
+        <li>Ask a question with emojis</li>
+        <li>Share your hot take below</li>
+        <li>What would you add to this list?</li>
+        <li>Unpopular opinion thread</li>
+        <li>First word that comes to mind</li>
+        <li>Name a better feeling than X</li>
+        <li>Share your morning routine</li>
+        <li>What's your biggest win this week?</li>
+        <li>Guess the answer</li>
+        <li>Finish this sentence</li>
+        <li>Red flag or green flag?</li>
+        <li>Rank these from best to worst</li>
+        <li>What's your go-to X?</li>
+        <li>Share your why</li>
+        <li>Tell me in 3 words</li>
+        <li>DM me for...</li>
+      </ol>
+    </div>
+    <div class="quadrant">
+      <div class="q-title">Behind the Scenes</div>
+      <ol style="padding-left:16px;">
+        <li>Day in my life as [role]</li>
+        <li>How I create [product/content]</li>
+        <li>My workspace tour</li>
+        <li>Current project I'm working on</li>
+        <li>Meet the team/face behind</li>
+        <li>Our process from start to finish</li>
+        <li>A typical Monday morning</li>
+        <li>What's in my bag/on my desk</li>
+        <li>Packing orders / fulfilling work</li>
+        <li>Recent highs and lows</li>
+        <li>My morning routine</li>
+        <li>Where I get inspiration</li>
+        <li>Photo dump from this week</li>
+        <li>The story behind [brand name]</li>
+        <li>Our origin story</li>
+        <li>Work from home setup tour</li>
+        <li>What I'm reading / listening to</li>
+        <li>Goals I'm working toward</li>
+        <li>Outfit/gear I'm wearing</li>
+        <li>My tools of the trade</li>
+        <li>First vs. latest project</li>
+        <li>Struggles no one talks about</li>
+        <li>Small wins worth celebrating</li>
+        <li>My favorite mistake</li>
+        <li>Real talk: what it takes</li>
+      </ol>
+    </div>
+    <div class="quadrant">
+      <div class="q-title">Promotional</div>
+      <ol style="padding-left:16px;">
+        <li>Why I created this product</li>
+        <li>Customer spotlight / testimonial</li>
+        <li>Before and after results</li>
+        <li>Limited-time offer</li>
+        <li>New product launch announcement</li>
+        <li>Bestseller feature</li>
+        <li>Flash sale countdown</li>
+        <li>Bundle deal highlight</li>
+        <li>User-generated content repost</li>
+        <li>Review compilation</li>
+        <li>What's inside [product]</li>
+        <li>Perfect for [use case]</li>
+        <li>Price drop alert</li>
+        <li>Free resource / lead magnet</li>
+        <li>Upcoming event / webinar</li>
+        <li>"Work with me" offer</li>
+        <li>Early bird discount</li>
+        <li>Refer a friend incentive</li>
+        <li>Restock announcement</li>
+        <li>Gift guide featuring your products</li>
+        <li>Subscription / membership perks</li>
+        <li>Holiday special</li>
+        <li>Seasonal collection drop</li>
+        <li>Success stories from clients</li>
+        <li>Book a call / consultation</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PAGE 10: HASHTAG ORGANIZER ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Hashtag Strategy</h1><div class="sub">Organize &amp; optimize your hashtag sets</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:12px;">
+    <div>
+      <div class="grid-2" style="gap:8px;">
+        <div class="hashtag-block">
+          <div class="hb-title">Set 1: <span class="fl" style="min-width:60%"></span></div>
+          <div class="hashtag-slots">
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+          </div>
+          <div style="font-size:8px;margin-top:4px;">Rating: <span class="cb"></span>Poor <span class="cb"></span>Fair <span class="cb"></span>Good <span class="cb"></span>Great</div>
+        </div>
+        <div class="hashtag-block">
+          <div class="hb-title">Set 2: <span class="fl" style="min-width:60%"></span></div>
+          <div class="hashtag-slots">
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+          </div>
+          <div style="font-size:8px;margin-top:4px;">Rating: <span class="cb"></span>Poor <span class="cb"></span>Fair <span class="cb"></span>Good <span class="cb"></span>Great</div>
+        </div>
+        <div class="hashtag-block">
+          <div class="hb-title">Set 3: <span class="fl" style="min-width:60%"></span></div>
+          <div class="hashtag-slots">
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+          </div>
+          <div style="font-size:8px;margin-top:4px;">Rating: <span class="cb"></span>Poor <span class="cb"></span>Fair <span class="cb"></span>Good <span class="cb"></span>Great</div>
+        </div>
+        <div class="hashtag-block">
+          <div class="hb-title">Set 4: <span class="fl" style="min-width:60%"></span></div>
+          <div class="hashtag-slots">
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+          </div>
+          <div style="font-size:8px;margin-top:4px;">Rating: <span class="cb"></span>Poor <span class="cb"></span>Fair <span class="cb"></span>Good <span class="cb"></span>Great</div>
+        </div>
+        <div class="hashtag-block">
+          <div class="hb-title">Set 5: <span class="fl" style="min-width:60%"></span></div>
+          <div class="hashtag-slots">
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+          </div>
+          <div style="font-size:8px;margin-top:4px;">Rating: <span class="cb"></span>Poor <span class="cb"></span>Fair <span class="cb"></span>Good <span class="cb"></span>Great</div>
+        </div>
+        <div class="hashtag-block">
+          <div class="hb-title">Set 6: <span class="fl" style="min-width:60%"></span></div>
+          <div class="hashtag-slots">
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+            <div class="hashtag-slot">#</div><div class="hashtag-slot">#</div><div class="hashtag-slot">#</div>
+          </div>
+          <div style="font-size:8px;margin-top:4px;">Rating: <span class="cb"></span>Poor <span class="cb"></span>Fair <span class="cb"></span>Good <span class="cb"></span>Great</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="hashtag-block" style="margin-bottom:10px;">
+        <div class="hb-title">Branded Hashtags</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot">#</div>
+      </div>
+      <div class="hashtag-block" style="margin-bottom:10px;">
+        <div class="hb-title">Banned / Shadowbanned</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot">#</div>
+      </div>
+      <div class="hashtag-block">
+        <div class="hb-title">Trending This Month</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot" style="margin-bottom:2px;">#</div>
+        <div class="hashtag-slot">#</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PAGE 11: CAMPAIGN PLANNER ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Campaign Planner</h1><div class="sub">Plan your next launch or promotion</div></div>
+  </div>
+
+  <div style="padding:10px;background:var(--color-accent-bg);margin-bottom:14px;border-left:3px solid var(--color-primary);font-size:11px;line-height:1.8;">
+    <strong>Campaign Name:</strong> <span class="fl" style="min-width:78%"></span><br>
+    <strong>Goal:</strong> <span class="fl" style="min-width:86%"></span><br>
+    <strong>Date Range:</strong> <span class="fl" style="min-width:25%"></span> to <span class="fl" style="min-width:25%"></span> &nbsp; <strong>Budget:</strong> $<span class="fl" style="min-width:15%"></span><br>
+    <strong>Platforms:</strong> <span class="cb"></span>IG <span class="cb"></span>FB <span class="cb"></span>TT <span class="cb"></span>X <span class="cb"></span>LI <span class="cb"></span>PI <span class="cb"></span>YT
+  </div>
+
+  <h3>Content Timeline</h3>
+  <table style="margin-bottom:14px;">
+    <tr><th style="width:10%">Week</th><th style="width:50%">Content</th><th style="width:20%">Platform</th><th style="width:20%">Status</th></tr>
+    <tr><td style="text-align:center">1</td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">2</td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">3</td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">4</td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">5</td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">6</td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">7</td><td></td><td></td><td></td></tr>
+  </table>
+
+  <h3>KPIs &amp; Metrics</h3>
+  <table style="margin-bottom:14px;">
+    <tr><th style="width:40%">KPI</th><th style="width:20%">Target</th><th style="width:20%">Actual</th><th style="width:20%">Notes</th></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <h3>Post-Campaign Review</h3>
+  <div style="font-size:11px;line-height:2;">
+    <strong>What worked:</strong><br><span class="line"></span><span class="line"></span>
+    <strong>What didn't:</strong><br><span class="line"></span><span class="line"></span>
+    <strong>Key learnings:</strong><br><span class="line"></span><span class="line"></span>
+    <strong>ROI:</strong> <span class="fl" style="min-width:80%"></span>
+  </div>
+</div>
+
+<!-- ========== PAGE 12: FOLLOWER GROWTH TRACKER ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Follower Growth Tracker</h1><div class="sub">12 months across 7 platforms</div></div>
+    <div class="meta"><span class="field">Year <span style="min-width:50px"></span></span></div>
+  </div>
+
+  <table>
+    <tr><th>Month</th><th>IG</th><th>FB</th><th>TT</th><th>X</th><th>LI</th><th>PI</th><th>YT</th></tr>
+    <tr><td>January</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>February</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>March</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>April</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>May</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>June</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>July</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>August</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>September</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>October</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>November</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>December</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td>Growth %</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <h3 style="margin-top:16px;">Milestones Reached</h3>
+  <table>
+    <tr><th style="width:35%">Milestone</th><th style="width:20%">Platform</th><th style="width:20%">Date</th><th style="width:25%">How I Celebrated</th></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <div style="margin-top:14px;padding:10px;background:var(--color-accent-bg);border-left:3px solid var(--color-primary);font-size:11px;line-height:1.8;">
+    <strong>End of Year Goals:</strong><br>
+    IG: <span class="fl" style="min-width:60px"></span> FB: <span class="fl" style="min-width:60px"></span> TT: <span class="fl" style="min-width:60px"></span> X: <span class="fl" style="min-width:60px"></span><br>
+    LI: <span class="fl" style="min-width:60px"></span> PI: <span class="fl" style="min-width:60px"></span> YT: <span class="fl" style="min-width:60px"></span>
+  </div>
+</div>
+
+<!-- ========== PAGE 13: HOLIDAY CALENDAR ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Holiday &amp; Key Dates</h1><div class="sub">Never miss a marketing moment</div></div>
+  </div>
+
+  <div class="grid-3">
+    <div class="month-card">
+      <h4>January</h4>
+      <div class="date-item">1 &bull; New Year's Day</div>
+      <div class="date-item">19 &bull; MLK Day</div>
+      <div class="date-item">24 &bull; Compliment Day</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+    <div class="month-card">
+      <h4>February</h4>
+      <div class="date-item">13 &bull; Galentine's Day</div>
+      <div class="date-item">14 &bull; Valentine's Day</div>
+      <div class="date-item">16 &bull; Presidents' Day</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+    <div class="month-card">
+      <h4>March</h4>
+      <div class="date-item">8 &bull; Int'l Women's Day</div>
+      <div class="date-item">17 &bull; St. Patrick's Day</div>
+      <div class="date-item">20 &bull; Spring Begins</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+    <div class="month-card">
+      <h4>April</h4>
+      <div class="date-item">1 &bull; April Fools</div>
+      <div class="date-item">15 &bull; Tax Day</div>
+      <div class="date-item">22 &bull; Earth Day</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+    <div class="month-card">
+      <h4>May</h4>
+      <div class="date-item">4-8 &bull; Small Biz Week</div>
+      <div class="date-item">10 &bull; Mother's Day</div>
+      <div class="date-item">25 &bull; Memorial Day</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+    <div class="month-card">
+      <h4>June</h4>
+      <div class="date-item">All &bull; Pride Month</div>
+      <div class="date-item">20 &bull; Summer Solstice</div>
+      <div class="date-item">21 &bull; Father's Day</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+    <div class="month-card">
+      <h4>July</h4>
+      <div class="date-item">4 &bull; Independence Day</div>
+      <div class="date-item">17 &bull; World Emoji Day</div>
+      <div class="date-item">30 &bull; Social Media Day</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+    <div class="month-card">
+      <h4>August</h4>
+      <div class="date-item">Back to School</div>
+      <div class="date-item">8 &bull; Int'l Cat Day</div>
+      <div class="date-item">26 &bull; Nat'l Dog Day</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+    <div class="month-card">
+      <h4>September</h4>
+      <div class="date-item">7 &bull; Labor Day</div>
+      <div class="date-item">22 &bull; Fall Begins</div>
+      <div class="date-item">30 &bull; Podcast Day</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+    <div class="month-card">
+      <h4>October</h4>
+      <div class="date-item">10 &bull; Mental Health</div>
+      <div class="date-item">16 &bull; Boss's Day</div>
+      <div class="date-item">31 &bull; Halloween</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+    <div class="month-card">
+      <h4>November</h4>
+      <div class="date-item">26 &bull; Thanksgiving</div>
+      <div class="date-item">27 &bull; Black Friday</div>
+      <div class="date-item">28 &bull; Small Biz Saturday</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+    <div class="month-card">
+      <h4>December</h4>
+      <div class="date-item">Hanukkah (dates vary)</div>
+      <div class="date-item">25 &bull; Christmas</div>
+      <div class="date-item">31 &bull; New Year's Eve</div>
+      <div class="date-item" style="font-style:italic;color:var(--color-text-light);">My plans: _____</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PAGE 14: THANK YOU ========== -->
+<div class="page thank-you">
+  <div class="border-box">
+    <h1>Thank You!</h1>
+    <div class="heart">&#9825;</div>
+    <p style="font-size:16px;">Thank you for your purchase!</p>
+    <div class="divider"></div>
+    <p>If you love this planner, a <strong>5-star review</strong> would mean the world to us.</p>
+    <p>Your review helps small creators like us keep making products you'll love.</p>
+    <div class="divider"></div>
+    <p class="small">Wishing you explosive growth &amp; a loyal audience</p>
+    <p class="small">in every post ahead.</p>
+  </div>
+</div>
+
+</body>
+</html>

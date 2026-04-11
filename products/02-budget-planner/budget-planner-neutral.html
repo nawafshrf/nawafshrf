@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Budget Planner 2026 - Neutral</title>
+<style>
+:root {
+  --color-primary: #8B7355;
+  --color-secondary: #C2A990;
+  --color-accent-bg: #F5F0EB;
+  --color-header-bg: #8B7355;
+  --color-header-text: #FFFFFF;
+  --color-bg: #F0EEE9;
+  --color-page-bg: #FFFFFF;
+  --color-text: #2C2C2C;
+  --color-text-light: #6B7280;
+  --color-lines: #D1D5DB;
+  --color-lines-light: #E5E7EB;
+}
+@page { size: letter; margin: 0.5in; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.4;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.page {
+  width: 7.5in;
+  min-height: 10in;
+  background: var(--color-page-bg);
+  margin: 20px auto;
+  padding: 0.25in;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+}
+.page:last-child { page-break-after: auto; }
+@media print {
+  html, body { background: white; }
+  .page { box-shadow: none; margin: 0; width: 100%; min-height: auto; padding: 0; }
+}
+h1 { color: var(--color-primary); font-weight: 300; letter-spacing: 0.05em; }
+h2 {
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--color-secondary);
+}
+h3 { color: var(--color-primary); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+.subtitle { color: var(--color-text-light); font-size: 12px; font-style: italic; }
+
+/* COVER PAGE */
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 10in;
+  text-align: center;
+  background: linear-gradient(to bottom, var(--color-page-bg) 0%, var(--color-accent-bg) 100%);
+}
+.cover .border-box {
+  border: 1px solid var(--color-primary);
+  padding: 80px 60px;
+  width: 80%;
+}
+.cover h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 46px;
+  font-weight: 300;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+.cover .tagline {
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 40px;
+}
+.cover .divider {
+  width: 80px;
+  height: 1px;
+  background: var(--color-primary);
+  margin: 30px auto;
+}
+.cover .year {
+  font-family: Georgia, serif;
+  font-size: 72px;
+  font-weight: 300;
+  color: var(--color-primary);
+  margin: 30px 0;
+}
+.cover .belongs {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-top: 40px;
+}
+.cover .belongs-line {
+  display: block;
+  width: 280px;
+  border-bottom: 1px solid var(--color-text-light);
+  margin: 10px auto;
+  height: 24px;
+}
+
+/* HEADER */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--color-primary);
+}
+.page-header .title-block h1 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+.page-header .title-block .sub { font-size: 11px; color: var(--color-text-light); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
+.page-header .meta { font-size: 11px; color: var(--color-text-light); text-align: right; }
+.page-header .meta .field { display: inline-block; margin-left: 12px; }
+.page-header .meta .field span { display: inline-block; border-bottom: 1px solid var(--color-text-light); min-width: 80px; height: 16px; }
+
+/* TABLES */
+table { width: 100%; border-collapse: collapse; font-size: 11px; }
+table th {
+  background: var(--color-header-bg);
+  color: var(--color-header-text);
+  padding: 7px 8px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+table td {
+  padding: 8px;
+  border-bottom: 1px solid var(--color-lines-light);
+  height: 26px;
+}
+table tr:nth-child(even) td { background: var(--color-accent-bg); }
+table .total-row td {
+  background: var(--color-secondary) !important;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+table .category-row td {
+  background: var(--color-secondary) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  padding: 6px 8px;
+}
+
+/* SUMMARY BOX */
+.summary-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.summary-box .item {
+  border: 2px solid var(--color-primary);
+  padding: 12px;
+  text-align: center;
+  background: var(--color-accent-bg);
+}
+.summary-box .item .label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-primary); font-weight: 600; }
+.summary-box .item .value { font-size: 20px; font-weight: 300; color: var(--color-text); margin-top: 6px; border-bottom: 1px solid var(--color-lines); padding-bottom: 4px; }
+
+/* PROGRESS BARS */
+.progress-bar {
+  width: 100%;
+  height: 24px;
+  border: 2px solid var(--color-primary);
+  background: white;
+  border-radius: 12px;
+  position: relative;
+  margin: 8px 0;
+}
+.progress-bar .markers {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  color: var(--color-text-light);
+}
+
+/* CHECKBOX */
+.cb {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--color-primary);
+  vertical-align: middle;
+  margin-right: 3px;
+  border-radius: 2px;
+}
+
+/* BLANK LINES */
+.line { display: block; width: 100%; border-bottom: 1px solid var(--color-lines); height: 22px; margin-bottom: 6px; }
+.short-line { display: inline-block; min-width: 120px; border-bottom: 1px solid var(--color-lines); height: 18px; margin: 0 4px; }
+
+/* TOC */
+.toc-list { list-style: none; }
+.toc-list li {
+  padding: 10px 0;
+  border-bottom: 1px dotted var(--color-lines);
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+.toc-list li .num {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+.toc-list li .name { flex: 1; color: var(--color-text); }
+.toc-list li .hint { font-size: 10px; color: var(--color-text-light); font-style: italic; }
+.instructions {
+  margin-top: 20px;
+  padding: 14px;
+  background: var(--color-accent-bg);
+  border-left: 4px solid var(--color-primary);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* GOALS PAGE */
+.goals-section { margin-bottom: 16px; }
+.goals-section .section-title {
+  background: var(--color-header-bg);
+  color: var(--color-header-text);
+  padding: 7px 12px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+.goals-section table { border: 1px solid var(--color-lines); border-top: none; }
+
+/* CALENDAR */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: var(--color-lines);
+  border: 1px solid var(--color-lines);
+}
+.calendar .day-header {
+  background: var(--color-header-bg);
+  color: var(--color-header-text);
+  padding: 6px;
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+.calendar .day-cell {
+  background: white;
+  min-height: 62px;
+  padding: 4px;
+  font-size: 9px;
+}
+.calendar .day-cell .day-num { color: var(--color-text-light); font-weight: 600; }
+
+/* GRIDS */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+/* GOAL BLOCK */
+.goal-block {
+  border: 1.5px solid var(--color-primary);
+  padding: 10px;
+  background: var(--color-accent-bg);
+}
+.goal-block .goal-title { font-size: 11px; font-weight: 600; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+.goal-block .goal-fields { font-size: 10px; color: var(--color-text-light); margin-bottom: 6px; }
+.goal-block .goal-fields .fl { display: inline-block; min-width: 60px; border-bottom: 1px solid var(--color-lines); height: 14px; margin: 0 4px; }
+.goal-block table td { background: white !important; padding: 5px 6px; font-size: 10px; height: 22px; }
+
+/* 52-WEEK GRID */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  gap: 3px;
+  margin: 12px 0;
+}
+.week-cell {
+  border: 1px solid var(--color-primary);
+  padding: 4px 2px;
+  text-align: center;
+  font-size: 8px;
+  background: white;
+  min-height: 36px;
+}
+.week-cell .num { font-weight: 600; color: var(--color-primary); }
+.week-cell .amt { font-family: 'Courier New', monospace; color: var(--color-text); margin-top: 1px; }
+.week-cell .box { display: block; width: 8px; height: 8px; border: 1px solid var(--color-lines); margin: 2px auto 0; }
+
+/* THERMOMETER */
+.thermometer {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin: 12px 0;
+}
+.thermo-bar {
+  width: 50px;
+  height: 240px;
+  border: 2px solid var(--color-primary);
+  border-radius: 25px 25px 0 0;
+  background: linear-gradient(to top, var(--color-accent-bg) 0%, white 100%);
+  position: relative;
+}
+.thermo-bar::after {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: -12px;
+  width: 72px;
+  height: 72px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  background: var(--color-secondary);
+}
+.thermo-markers { font-size: 9px; color: var(--color-text-light); list-style: none; flex: 1; }
+.thermo-markers li { padding: 8px 0; border-bottom: 1px dotted var(--color-lines); }
+
+/* ENVELOPE */
+.envelope {
+  border: 1.5px solid var(--color-primary);
+  padding: 8px;
+  background: white;
+}
+.envelope .env-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px dashed var(--color-primary);
+  font-size: 10px;
+}
+.envelope .env-header .cat { font-weight: 600; color: var(--color-primary); }
+.envelope .env-header .cat-line { display: inline-block; min-width: 80px; border-bottom: 1px solid var(--color-lines); height: 14px; }
+.envelope table { font-size: 9px; }
+.envelope table td { padding: 3px 4px; height: 18px; }
+
+/* NO-SPEND CALENDAR */
+.no-spend-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin: 12px 0;
+}
+.ns-cell {
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  min-height: 40px;
+  padding: 4px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: white;
+}
+
+/* NET WORTH */
+.nw-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.nw-section { border: 1px solid var(--color-primary); }
+.nw-section .nw-title {
+  background: var(--color-header-bg);
+  color: var(--color-header-text);
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.nw-box {
+  margin-top: 14px;
+  padding: 16px;
+  border: 2px solid var(--color-primary);
+  text-align: center;
+  background: var(--color-accent-bg);
+}
+.nw-box .nw-formula { font-size: 11px; color: var(--color-text-light); margin-bottom: 6px; }
+.nw-box .nw-value { font-size: 24px; font-weight: 300; color: var(--color-primary); border-bottom: 1px solid var(--color-primary); display: inline-block; padding: 2px 20px; min-width: 200px; }
+
+/* REVIEW */
+.review-section { margin-bottom: 12px; }
+.review-section .review-label { font-size: 11px; font-weight: 600; color: var(--color-primary); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* THANK YOU */
+.thank-you {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 10in;
+  text-align: center;
+  background: linear-gradient(to bottom, var(--color-accent-bg) 0%, var(--color-page-bg) 100%);
+}
+.thank-you .border-box {
+  border: 1px solid var(--color-primary);
+  padding: 80px 60px;
+  max-width: 75%;
+}
+.thank-you h1 {
+  font-family: Georgia, serif;
+  font-size: 62px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.thank-you .heart { font-size: 32px; color: var(--color-secondary); margin: 20px 0; }
+.thank-you p { font-size: 14px; color: var(--color-text); line-height: 1.8; margin-bottom: 14px; }
+.thank-you .divider { width: 60px; height: 1px; background: var(--color-primary); margin: 25px auto; }
+.thank-you .small { font-size: 11px; color: var(--color-text-light); font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- ========== PAGE 1: COVER ========== -->
+<div class="page cover">
+  <div class="border-box">
+    <div class="tagline">&mdash; Take Control of Your Finances &mdash;</div>
+    <h1>Ultimate<br>Budget Planner</h1>
+    <div class="divider"></div>
+    <div class="year">2026</div>
+    <div class="divider"></div>
+    <div class="belongs">This Planner Belongs To</div>
+    <span class="belongs-line"></span>
+  </div>
+</div>
+
+<!-- ========== PAGE 2: TABLE OF CONTENTS ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block">
+      <h1>What's Inside</h1>
+      <div class="sub">Your Complete Budget Planning System</div>
+    </div>
+  </div>
+
+  <ul class="toc-list">
+    <li><span class="num">1</span><span class="name">Financial Goals Worksheet</span><span class="hint">Set your short, mid & long-term targets</span></li>
+    <li><span class="num">2</span><span class="name">Monthly Budget Worksheet</span><span class="hint">Print 12 copies &mdash; one per month</span></li>
+    <li><span class="num">3</span><span class="name">Daily Expense Tracker</span><span class="hint">Print 12 copies</span></li>
+    <li><span class="num">4</span><span class="name">Monthly Bill Calendar</span><span class="hint">Print 12 copies</span></li>
+    <li><span class="num">5</span><span class="name">Savings Goals Tracker</span><span class="hint">Track 4 goals with progress bars</span></li>
+    <li><span class="num">6</span><span class="name">52-Week Money Saving Challenge</span><span class="hint">Save $1,378 in one year</span></li>
+    <li><span class="num">7</span><span class="name">Sinking Funds Tracker</span><span class="hint">6 categories of planned expenses</span></li>
+    <li><span class="num">8</span><span class="name">Debt Snowball Tracker</span><span class="hint">Pay off debt systematically</span></li>
+    <li><span class="num">9</span><span class="name">Cash Envelope Planner</span><span class="hint">8 envelope categories</span></li>
+    <li><span class="num">10</span><span class="name">No-Spend Challenge</span><span class="hint">Build better spending habits</span></li>
+    <li><span class="num">11</span><span class="name">Net Worth Tracker</span><span class="hint">Know your financial picture</span></li>
+    <li><span class="num">12</span><span class="name">Annual Financial Overview</span><span class="hint">12-month summary with quarters</span></li>
+    <li><span class="num">13</span><span class="name">Monthly Money Review</span><span class="hint">Print 12 copies &mdash; reflect & plan</span></li>
+  </ul>
+
+  <div class="instructions">
+    <strong>How to use this planner:</strong> Open this file in Chrome, Firefox, Safari, or Edge. Press <strong>Ctrl+P</strong> (Windows) or <strong>Cmd+P</strong> (Mac) and select "Save as PDF". Make sure "Background graphics" is checked so the colors print beautifully. Choose Letter paper size.
+  </div>
+</div>
+
+<!-- ========== PAGE 3: FINANCIAL GOALS ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Financial Goals</h1><div class="sub">Dream it. Plan it. Achieve it.</div></div>
+  </div>
+
+  <div class="goals-section">
+    <div class="section-title">Short-Term Goals (1&ndash;3 Months)</div>
+    <table>
+      <tr><th style="width:35%">Goal</th><th style="width:20%">Target Amount</th><th style="width:15%">Target Date</th><th style="width:30%">Action Steps</th></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="goals-section">
+    <div class="section-title">Mid-Term Goals (3&ndash;12 Months)</div>
+    <table>
+      <tr><th style="width:35%">Goal</th><th style="width:20%">Target Amount</th><th style="width:15%">Target Date</th><th style="width:30%">Action Steps</th></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="goals-section">
+    <div class="section-title">Long-Term Goals (1&ndash;5 Years)</div>
+    <table>
+      <tr><th style="width:35%">Goal</th><th style="width:20%">Target Amount</th><th style="width:15%">Target Date</th><th style="width:30%">Action Steps</th></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <h3 style="margin-top:14px;margin-bottom:6px;">My WHY</h3>
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</div>
+
+<!-- ========== PAGE 4: MONTHLY BUDGET ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Monthly Budget</h1><div class="sub">Plan every dollar with purpose</div></div>
+    <div class="meta"><span class="field">Month <span></span></span><span class="field">Year <span style="min-width:50px"></span></span></div>
+  </div>
+
+  <div class="summary-box">
+    <div class="item"><div class="label">Total Income</div><div class="value">&nbsp;</div></div>
+    <div class="item"><div class="label">Total Expenses</div><div class="value">&nbsp;</div></div>
+    <div class="item"><div class="label">Difference</div><div class="value">&nbsp;</div></div>
+  </div>
+
+  <table style="margin-bottom:10px;">
+    <tr><th colspan="3" style="background:var(--color-secondary);color:var(--color-primary);">INCOME</th></tr>
+    <tr><th>Source</th><th style="width:22%">Projected</th><th style="width:22%">Actual</th></tr>
+    <tr><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td></tr>
+    <tr class="total-row"><td>Subtotal Income</td><td></td><td></td></tr>
+  </table>
+
+  <table>
+    <tr><th style="width:34%">Expense</th><th style="width:22%">Budgeted</th><th style="width:22%">Actual</th><th style="width:22%">Difference</th></tr>
+    <tr class="category-row"><td colspan="4">Housing</td></tr>
+    <tr><td>Rent / Mortgage</td><td></td><td></td><td></td></tr>
+    <tr><td>Utilities</td><td></td><td></td><td></td></tr>
+    <tr><td>Insurance</td><td></td><td></td><td></td></tr>
+    <tr><td>Maintenance</td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="4">Transportation</td></tr>
+    <tr><td>Car Payment</td><td></td><td></td><td></td></tr>
+    <tr><td>Gas / Fuel</td><td></td><td></td><td></td></tr>
+    <tr><td>Insurance</td><td></td><td></td><td></td></tr>
+    <tr><td>Maintenance</td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="4">Food &amp; Dining</td></tr>
+    <tr><td>Groceries</td><td></td><td></td><td></td></tr>
+    <tr><td>Dining Out</td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="4">Personal</td></tr>
+    <tr><td>Clothing</td><td></td><td></td><td></td></tr>
+    <tr><td>Entertainment</td><td></td><td></td><td></td></tr>
+    <tr><td>Subscriptions</td><td></td><td></td><td></td></tr>
+    <tr><td>Personal Care</td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="4">Health</td></tr>
+    <tr><td>Insurance</td><td></td><td></td><td></td></tr>
+    <tr><td>Medications</td><td></td><td></td><td></td></tr>
+    <tr><td>Gym / Fitness</td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="4">Savings &amp; Debt</td></tr>
+    <tr><td>Emergency Fund</td><td></td><td></td><td></td></tr>
+    <tr><td>Retirement</td><td></td><td></td><td></td></tr>
+    <tr><td>Debt Payments</td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td colspan="4">Other</td></tr>
+    <tr><td>Gifts / Misc</td><td></td><td></td><td></td></tr>
+    <tr class="total-row"><td>Grand Total</td><td></td><td></td><td></td></tr>
+  </table>
+</div>
+
+<!-- ========== PAGE 5: DAILY EXPENSE TRACKER ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Daily Expense Tracker</h1><div class="sub">Every dollar counts</div></div>
+    <div class="meta"><span class="field">Month <span></span></span><span class="field">Year <span style="min-width:50px"></span></span></div>
+  </div>
+  <table>
+    <tr><th style="width:7%">Day</th><th style="width:36%">Description</th><th style="width:18%">Category</th><th style="width:18%">Payment</th><th style="width:10%">Amount</th><th style="width:11%">Running</th></tr>
+    <tr><td style="text-align:center">1</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">2</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">3</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">4</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">5</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">6</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">7</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">8</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">9</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">10</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">11</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">12</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">13</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">14</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">15</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">16</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">17</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">18</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">19</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">20</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">21</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">22</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">23</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">24</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">25</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">26</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">27</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">28</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">29</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">30</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">31</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="total-row"><td colspan="4">Total Spent / Daily Average</td><td></td><td></td></tr>
+  </table>
+</div>
+
+<!-- ========== PAGE 6: BILL CALENDAR ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Bill Payment Calendar</h1><div class="sub">Never miss a due date</div></div>
+    <div class="meta"><span class="field">Month <span></span></span><span class="field">Year <span style="min-width:50px"></span></span></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:62% 36%;gap:12px;">
+    <div>
+      <div class="calendar">
+        <div class="day-header">Sun</div><div class="day-header">Mon</div><div class="day-header">Tue</div><div class="day-header">Wed</div><div class="day-header">Thu</div><div class="day-header">Fri</div><div class="day-header">Sat</div>
+        <div class="day-cell"><div class="day-num">1</div></div><div class="day-cell"><div class="day-num">2</div></div><div class="day-cell"><div class="day-num">3</div></div><div class="day-cell"><div class="day-num">4</div></div><div class="day-cell"><div class="day-num">5</div></div><div class="day-cell"><div class="day-num">6</div></div><div class="day-cell"><div class="day-num">7</div></div>
+        <div class="day-cell"><div class="day-num">8</div></div><div class="day-cell"><div class="day-num">9</div></div><div class="day-cell"><div class="day-num">10</div></div><div class="day-cell"><div class="day-num">11</div></div><div class="day-cell"><div class="day-num">12</div></div><div class="day-cell"><div class="day-num">13</div></div><div class="day-cell"><div class="day-num">14</div></div>
+        <div class="day-cell"><div class="day-num">15</div></div><div class="day-cell"><div class="day-num">16</div></div><div class="day-cell"><div class="day-num">17</div></div><div class="day-cell"><div class="day-num">18</div></div><div class="day-cell"><div class="day-num">19</div></div><div class="day-cell"><div class="day-num">20</div></div><div class="day-cell"><div class="day-num">21</div></div>
+        <div class="day-cell"><div class="day-num">22</div></div><div class="day-cell"><div class="day-num">23</div></div><div class="day-cell"><div class="day-num">24</div></div><div class="day-cell"><div class="day-num">25</div></div><div class="day-cell"><div class="day-num">26</div></div><div class="day-cell"><div class="day-num">27</div></div><div class="day-cell"><div class="day-num">28</div></div>
+        <div class="day-cell"><div class="day-num">29</div></div><div class="day-cell"><div class="day-num">30</div></div><div class="day-cell"><div class="day-num">31</div></div><div class="day-cell"></div><div class="day-cell"></div><div class="day-cell"></div><div class="day-cell"></div>
+      </div>
+    </div>
+    <div>
+      <table>
+        <tr><th colspan="4" style="text-align:center;">Bills Due This Month</th></tr>
+        <tr><th style="width:48%;font-size:9px;">Bill</th><th style="width:18%;font-size:9px;">Due</th><th style="width:22%;font-size:9px;">Amount</th><th style="width:12%;font-size:9px;">&#10003;</th></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr><td></td><td></td><td></td><td style="text-align:center"><span class="cb"></span></td></tr>
+        <tr class="total-row"><td colspan="2">Total Due</td><td></td><td></td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PAGE 7: SAVINGS GOALS ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Savings Goals</h1><div class="sub">Dream big. Save smart.</div></div>
+  </div>
+
+  <div class="grid-2" style="gap:16px;">
+    <div class="goal-block">
+      <div class="goal-title">Goal 1</div>
+      <div class="goal-fields">Name <span class="fl"></span> Target $<span class="fl"></span> By <span class="fl"></span></div>
+      <div class="progress-bar"><div class="markers"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div></div>
+      <table style="margin-top:8px;">
+        <tr><th style="font-size:9px;">Date</th><th style="font-size:9px;">Deposit</th><th style="font-size:9px;">Withdraw</th><th style="font-size:9px;">Balance</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="goal-block">
+      <div class="goal-title">Goal 2</div>
+      <div class="goal-fields">Name <span class="fl"></span> Target $<span class="fl"></span> By <span class="fl"></span></div>
+      <div class="progress-bar"><div class="markers"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div></div>
+      <table style="margin-top:8px;">
+        <tr><th style="font-size:9px;">Date</th><th style="font-size:9px;">Deposit</th><th style="font-size:9px;">Withdraw</th><th style="font-size:9px;">Balance</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="goal-block">
+      <div class="goal-title">Goal 3</div>
+      <div class="goal-fields">Name <span class="fl"></span> Target $<span class="fl"></span> By <span class="fl"></span></div>
+      <div class="progress-bar"><div class="markers"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div></div>
+      <table style="margin-top:8px;">
+        <tr><th style="font-size:9px;">Date</th><th style="font-size:9px;">Deposit</th><th style="font-size:9px;">Withdraw</th><th style="font-size:9px;">Balance</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="goal-block">
+      <div class="goal-title">Goal 4</div>
+      <div class="goal-fields">Name <span class="fl"></span> Target $<span class="fl"></span> By <span class="fl"></span></div>
+      <div class="progress-bar"><div class="markers"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div></div>
+      <table style="margin-top:8px;">
+        <tr><th style="font-size:9px;">Date</th><th style="font-size:9px;">Deposit</th><th style="font-size:9px;">Withdraw</th><th style="font-size:9px;">Balance</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PAGE 8: 52-WEEK SAVINGS CHALLENGE ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>52-Week Savings Challenge</h1><div class="sub">Save $1,378 in one year &mdash; color in each week as you go</div></div>
+  </div>
+
+  <div class="week-grid">
+    <div class="week-cell"><div class="num">W1</div><div class="amt">$1</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W2</div><div class="amt">$2</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W3</div><div class="amt">$3</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W4</div><div class="amt">$4</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W5</div><div class="amt">$5</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W6</div><div class="amt">$6</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W7</div><div class="amt">$7</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W8</div><div class="amt">$8</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W9</div><div class="amt">$9</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W10</div><div class="amt">$10</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W11</div><div class="amt">$11</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W12</div><div class="amt">$12</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W13</div><div class="amt">$13</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W14</div><div class="amt">$14</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W15</div><div class="amt">$15</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W16</div><div class="amt">$16</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W17</div><div class="amt">$17</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W18</div><div class="amt">$18</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W19</div><div class="amt">$19</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W20</div><div class="amt">$20</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W21</div><div class="amt">$21</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W22</div><div class="amt">$22</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W23</div><div class="amt">$23</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W24</div><div class="amt">$24</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W25</div><div class="amt">$25</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W26</div><div class="amt">$26</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W27</div><div class="amt">$27</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W28</div><div class="amt">$28</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W29</div><div class="amt">$29</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W30</div><div class="amt">$30</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W31</div><div class="amt">$31</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W32</div><div class="amt">$32</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W33</div><div class="amt">$33</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W34</div><div class="amt">$34</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W35</div><div class="amt">$35</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W36</div><div class="amt">$36</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W37</div><div class="amt">$37</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W38</div><div class="amt">$38</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W39</div><div class="amt">$39</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W40</div><div class="amt">$40</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W41</div><div class="amt">$41</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W42</div><div class="amt">$42</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W43</div><div class="amt">$43</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W44</div><div class="amt">$44</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W45</div><div class="amt">$45</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W46</div><div class="amt">$46</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W47</div><div class="amt">$47</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W48</div><div class="amt">$48</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W49</div><div class="amt">$49</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W50</div><div class="amt">$50</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W51</div><div class="amt">$51</div><span class="box"></span></div>
+    <div class="week-cell"><div class="num">W52</div><div class="amt">$52</div><span class="box"></span></div>
+  </div>
+
+  <div class="summary-box" style="margin-top:20px;">
+    <div class="item"><div class="label">Quarterly Total Q1</div><div class="value">&nbsp;</div></div>
+    <div class="item"><div class="label">Mid-Year Total</div><div class="value">&nbsp;</div></div>
+    <div class="item"><div class="label">Final Year Total</div><div class="value">$1,378</div></div>
+  </div>
+
+  <div class="instructions" style="margin-top:16px;">
+    <strong>How it works:</strong> Each week, save the amount shown in that cell. Check the box when complete. By week 52, you'll have saved $1,378 &mdash; a full emergency fund starter or a dream vacation!
+  </div>
+</div>
+
+<!-- ========== PAGE 9: SINKING FUNDS ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Sinking Funds Tracker</h1><div class="sub">Plan ahead for life's big expenses</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="goal-block">
+      <div class="goal-title">Fund 1</div>
+      <div class="goal-fields">Category <span class="fl"></span> Goal $<span class="fl"></span> By <span class="fl"></span></div>
+      <table>
+        <tr><th style="font-size:9px;">Month</th><th style="font-size:9px;">Contribution</th><th style="font-size:9px;">Total</th></tr>
+        <tr><td>Jan</td><td></td><td></td></tr>
+        <tr><td>Feb</td><td></td><td></td></tr>
+        <tr><td>Mar</td><td></td><td></td></tr>
+        <tr><td>Apr</td><td></td><td></td></tr>
+        <tr><td>May</td><td></td><td></td></tr>
+        <tr><td>Jun</td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="goal-block">
+      <div class="goal-title">Fund 2</div>
+      <div class="goal-fields">Category <span class="fl"></span> Goal $<span class="fl"></span> By <span class="fl"></span></div>
+      <table>
+        <tr><th style="font-size:9px;">Month</th><th style="font-size:9px;">Contribution</th><th style="font-size:9px;">Total</th></tr>
+        <tr><td>Jan</td><td></td><td></td></tr>
+        <tr><td>Feb</td><td></td><td></td></tr>
+        <tr><td>Mar</td><td></td><td></td></tr>
+        <tr><td>Apr</td><td></td><td></td></tr>
+        <tr><td>May</td><td></td><td></td></tr>
+        <tr><td>Jun</td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="goal-block">
+      <div class="goal-title">Fund 3</div>
+      <div class="goal-fields">Category <span class="fl"></span> Goal $<span class="fl"></span> By <span class="fl"></span></div>
+      <table>
+        <tr><th style="font-size:9px;">Month</th><th style="font-size:9px;">Contribution</th><th style="font-size:9px;">Total</th></tr>
+        <tr><td>Jan</td><td></td><td></td></tr>
+        <tr><td>Feb</td><td></td><td></td></tr>
+        <tr><td>Mar</td><td></td><td></td></tr>
+        <tr><td>Apr</td><td></td><td></td></tr>
+        <tr><td>May</td><td></td><td></td></tr>
+        <tr><td>Jun</td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="goal-block">
+      <div class="goal-title">Fund 4</div>
+      <div class="goal-fields">Category <span class="fl"></span> Goal $<span class="fl"></span> By <span class="fl"></span></div>
+      <table>
+        <tr><th style="font-size:9px;">Month</th><th style="font-size:9px;">Contribution</th><th style="font-size:9px;">Total</th></tr>
+        <tr><td>Jan</td><td></td><td></td></tr>
+        <tr><td>Feb</td><td></td><td></td></tr>
+        <tr><td>Mar</td><td></td><td></td></tr>
+        <tr><td>Apr</td><td></td><td></td></tr>
+        <tr><td>May</td><td></td><td></td></tr>
+        <tr><td>Jun</td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="goal-block">
+      <div class="goal-title">Fund 5</div>
+      <div class="goal-fields">Category <span class="fl"></span> Goal $<span class="fl"></span> By <span class="fl"></span></div>
+      <table>
+        <tr><th style="font-size:9px;">Month</th><th style="font-size:9px;">Contribution</th><th style="font-size:9px;">Total</th></tr>
+        <tr><td>Jan</td><td></td><td></td></tr>
+        <tr><td>Feb</td><td></td><td></td></tr>
+        <tr><td>Mar</td><td></td><td></td></tr>
+        <tr><td>Apr</td><td></td><td></td></tr>
+        <tr><td>May</td><td></td><td></td></tr>
+        <tr><td>Jun</td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="goal-block">
+      <div class="goal-title">Fund 6</div>
+      <div class="goal-fields">Category <span class="fl"></span> Goal $<span class="fl"></span> By <span class="fl"></span></div>
+      <table>
+        <tr><th style="font-size:9px;">Month</th><th style="font-size:9px;">Contribution</th><th style="font-size:9px;">Total</th></tr>
+        <tr><td>Jan</td><td></td><td></td></tr>
+        <tr><td>Feb</td><td></td><td></td></tr>
+        <tr><td>Mar</td><td></td><td></td></tr>
+        <tr><td>Apr</td><td></td><td></td></tr>
+        <tr><td>May</td><td></td><td></td></tr>
+        <tr><td>Jun</td><td></td><td></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="instructions" style="margin-top:12px;font-size:10px;">
+    <strong>Suggested Categories:</strong> Car Repairs &bull; Medical Expenses &bull; Vacation &bull; Holiday Gifts &bull; Home Repairs &bull; Education &bull; Wedding &bull; Baby &bull; Pet Care
+  </div>
+</div>
+
+<!-- ========== PAGE 10: DEBT SNOWBALL ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Debt Payoff Tracker</h1><div class="sub">Every payment brings you closer to freedom</div></div>
+  </div>
+
+  <table style="margin-bottom:16px;">
+    <tr><th style="width:5%">#</th><th style="width:30%">Creditor</th><th style="width:17%">Total Owed</th><th style="width:13%">Rate %</th><th style="width:17%">Min Payment</th><th style="width:18%">Payoff Order</th></tr>
+    <tr><td style="text-align:center">1</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">2</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">3</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">4</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">5</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td style="text-align:center">6</td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="total-row"><td colspan="2">Total Debt</td><td></td><td>&mdash;</td><td></td><td>&mdash;</td></tr>
+  </table>
+
+  <div style="display:grid;grid-template-columns:40% 60%;gap:16px;">
+    <div>
+      <h3 style="text-align:center;margin-bottom:8px;">Progress</h3>
+      <div class="thermometer">
+        <div class="thermo-bar"></div>
+        <ul class="thermo-markers">
+          <li>100% &mdash; Debt Free!</li>
+          <li>75% &mdash; Almost there</li>
+          <li>50% &mdash; Halfway</li>
+          <li>25% &mdash; Building momentum</li>
+          <li>0% &mdash; Starting point</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:8px;">Snowball vs Avalanche</h3>
+      <div style="padding:10px;border:1px solid var(--color-lines);background:var(--color-accent-bg);font-size:10px;line-height:1.6;">
+        <strong style="color:var(--color-primary);">Snowball Method:</strong><br>Pay smallest balance first. Builds quick wins and motivation.<br><br>
+        <strong style="color:var(--color-primary);">Avalanche Method:</strong><br>Pay highest interest rate first. Saves the most money overall.<br><br>
+        <strong>Choose the method that keeps you motivated!</strong>
+      </div>
+      <div class="nw-box" style="margin-top:10px;padding:10px;">
+        <div class="nw-formula">Debt-Free Date Goal</div>
+        <div class="nw-value" style="font-size:18px;">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PAGE 11: CASH ENVELOPE ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Cash Envelope Planner</h1><div class="sub">Stick to your budget, envelope by envelope</div></div>
+    <div class="meta"><span class="field">Period <span></span></span></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="envelope">
+      <div class="env-header"><span class="cat">Category: <span class="cat-line"></span></span><span>Budget: $<span class="cat-line"></span></span></div>
+      <table><tr><th style="font-size:8px;">Date</th><th style="font-size:8px;">Description</th><th style="font-size:8px;">Amount</th><th style="font-size:8px;">Left</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="envelope">
+      <div class="env-header"><span class="cat">Category: <span class="cat-line"></span></span><span>Budget: $<span class="cat-line"></span></span></div>
+      <table><tr><th style="font-size:8px;">Date</th><th style="font-size:8px;">Description</th><th style="font-size:8px;">Amount</th><th style="font-size:8px;">Left</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="envelope">
+      <div class="env-header"><span class="cat">Category: <span class="cat-line"></span></span><span>Budget: $<span class="cat-line"></span></span></div>
+      <table><tr><th style="font-size:8px;">Date</th><th style="font-size:8px;">Description</th><th style="font-size:8px;">Amount</th><th style="font-size:8px;">Left</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="envelope">
+      <div class="env-header"><span class="cat">Category: <span class="cat-line"></span></span><span>Budget: $<span class="cat-line"></span></span></div>
+      <table><tr><th style="font-size:8px;">Date</th><th style="font-size:8px;">Description</th><th style="font-size:8px;">Amount</th><th style="font-size:8px;">Left</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="envelope">
+      <div class="env-header"><span class="cat">Category: <span class="cat-line"></span></span><span>Budget: $<span class="cat-line"></span></span></div>
+      <table><tr><th style="font-size:8px;">Date</th><th style="font-size:8px;">Description</th><th style="font-size:8px;">Amount</th><th style="font-size:8px;">Left</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="envelope">
+      <div class="env-header"><span class="cat">Category: <span class="cat-line"></span></span><span>Budget: $<span class="cat-line"></span></span></div>
+      <table><tr><th style="font-size:8px;">Date</th><th style="font-size:8px;">Description</th><th style="font-size:8px;">Amount</th><th style="font-size:8px;">Left</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="envelope">
+      <div class="env-header"><span class="cat">Category: <span class="cat-line"></span></span><span>Budget: $<span class="cat-line"></span></span></div>
+      <table><tr><th style="font-size:8px;">Date</th><th style="font-size:8px;">Description</th><th style="font-size:8px;">Amount</th><th style="font-size:8px;">Left</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="envelope">
+      <div class="env-header"><span class="cat">Category: <span class="cat-line"></span></span><span>Budget: $<span class="cat-line"></span></span></div>
+      <table><tr><th style="font-size:8px;">Date</th><th style="font-size:8px;">Description</th><th style="font-size:8px;">Amount</th><th style="font-size:8px;">Left</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+  </div>
+  <div style="margin-top:12px;text-align:center;font-size:11px;color:var(--color-primary);font-weight:600;">Total Cash Budget: $______________</div>
+</div>
+
+<!-- ========== PAGE 12: NO-SPEND CHALLENGE ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>No-Spend Challenge</h1><div class="sub">Build mindful spending habits</div></div>
+    <div class="meta"><span class="field">Month <span></span></span></div>
+  </div>
+
+  <div class="no-spend-grid">
+    <div class="ns-cell">1</div><div class="ns-cell">2</div><div class="ns-cell">3</div><div class="ns-cell">4</div><div class="ns-cell">5</div><div class="ns-cell">6</div><div class="ns-cell">7</div>
+    <div class="ns-cell">8</div><div class="ns-cell">9</div><div class="ns-cell">10</div><div class="ns-cell">11</div><div class="ns-cell">12</div><div class="ns-cell">13</div><div class="ns-cell">14</div>
+    <div class="ns-cell">15</div><div class="ns-cell">16</div><div class="ns-cell">17</div><div class="ns-cell">18</div><div class="ns-cell">19</div><div class="ns-cell">20</div><div class="ns-cell">21</div>
+    <div class="ns-cell">22</div><div class="ns-cell">23</div><div class="ns-cell">24</div><div class="ns-cell">25</div><div class="ns-cell">26</div><div class="ns-cell">27</div><div class="ns-cell">28</div>
+    <div class="ns-cell">29</div><div class="ns-cell">30</div><div class="ns-cell">31</div>
+  </div>
+
+  <div class="summary-box" style="margin-top:20px;">
+    <div class="item"><div class="label">No-Spend Days</div><div class="value">___ / 31</div></div>
+    <div class="item"><div class="label">Longest Streak</div><div class="value">&nbsp;</div></div>
+    <div class="item"><div class="label">Money Saved</div><div class="value">&nbsp;</div></div>
+  </div>
+
+  <div class="instructions" style="margin-top:16px;">
+    <strong>Rules:</strong> A "no-spend day" means no discretionary spending. Essentials like bills, groceries, gas, and medicine don't count against you. Color in each day: <strong>green for no-spend</strong>, <strong>red for spend</strong>. Try to build the longest streak possible!
+  </div>
+
+  <div style="margin-top:14px;">
+    <h3>Notes &amp; Reflections</h3>
+    <span class="line"></span><span class="line"></span><span class="line"></span>
+  </div>
+</div>
+
+<!-- ========== PAGE 13: NET WORTH ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Net Worth Tracker</h1><div class="sub">Know where you stand financially</div></div>
+    <div class="meta"><span class="field">Date <span></span></span></div>
+  </div>
+
+  <div class="nw-tables">
+    <div class="nw-section">
+      <div class="nw-title">Assets</div>
+      <table>
+        <tr class="category-row"><td colspan="2">Cash &amp; Savings</td></tr>
+        <tr><td>Checking</td><td></td></tr>
+        <tr><td>Savings</td><td></td></tr>
+        <tr><td>Cash on Hand</td><td></td></tr>
+        <tr class="category-row"><td colspan="2">Investments</td></tr>
+        <tr><td>Retirement (401k / IRA)</td><td></td></tr>
+        <tr><td>Brokerage</td><td></td></tr>
+        <tr><td>Crypto / Other</td><td></td></tr>
+        <tr class="category-row"><td colspan="2">Property</td></tr>
+        <tr><td>Home Value</td><td></td></tr>
+        <tr><td>Vehicle</td><td></td></tr>
+        <tr><td>Other Assets</td><td></td></tr>
+        <tr class="total-row"><td>Total Assets</td><td></td></tr>
+      </table>
+    </div>
+    <div class="nw-section">
+      <div class="nw-title">Liabilities</div>
+      <table>
+        <tr class="category-row"><td colspan="2">Loans</td></tr>
+        <tr><td>Mortgage</td><td></td></tr>
+        <tr><td>Auto Loan</td><td></td></tr>
+        <tr><td>Student Loans</td><td></td></tr>
+        <tr><td>Personal Loans</td><td></td></tr>
+        <tr class="category-row"><td colspan="2">Credit</td></tr>
+        <tr><td>Credit Card 1</td><td></td></tr>
+        <tr><td>Credit Card 2</td><td></td></tr>
+        <tr><td>Credit Card 3</td><td></td></tr>
+        <tr class="category-row"><td colspan="2">Other</td></tr>
+        <tr><td>Medical Debt</td><td></td></tr>
+        <tr><td>Other</td><td></td></tr>
+        <tr><td>&nbsp;</td><td></td></tr>
+        <tr class="total-row"><td>Total Liabilities</td><td></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="nw-box">
+    <div class="nw-formula">Total Assets &minus; Total Liabilities =</div>
+    <div class="nw-value">&nbsp;</div>
+    <div style="font-size:10px;margin-top:6px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-primary);">Net Worth</div>
+  </div>
+
+  <h3 style="margin-top:16px;">12-Month Tracking</h3>
+  <table style="font-size:9px;">
+    <tr><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+</div>
+
+<!-- ========== PAGE 14: ANNUAL OVERVIEW ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Annual Financial Overview</h1><div class="sub">Your year at a glance</div></div>
+    <div class="meta"><span class="field">Year <span style="min-width:50px"></span></span></div>
+  </div>
+
+  <table>
+    <tr><th>Month</th><th>Income</th><th>Expenses</th><th>Savings</th><th>Net Worth</th></tr>
+    <tr><td>January</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>February</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>March</td><td></td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td>Q1 Total</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>April</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>May</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>June</td><td></td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td>Q2 Total</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>July</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>August</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>September</td><td></td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td>Q3 Total</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>October</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>November</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>December</td><td></td><td></td><td></td><td></td></tr>
+    <tr class="category-row"><td>Q4 Total</td><td></td><td></td><td></td><td></td></tr>
+    <tr class="total-row"><td>Annual Total</td><td></td><td></td><td></td><td></td></tr>
+  </table>
+
+  <h3 style="margin-top:16px;">Key Financial Ratios</h3>
+  <div class="summary-box">
+    <div class="item"><div class="label">Savings Rate</div><div class="value">___ %</div></div>
+    <div class="item"><div class="label">Avg Monthly Expenses</div><div class="value">&nbsp;</div></div>
+    <div class="item"><div class="label">Emergency Fund</div><div class="value">___ mo</div></div>
+  </div>
+</div>
+
+<!-- ========== PAGE 15: MONTHLY MONEY REVIEW ========== -->
+<div class="page">
+  <div class="page-header">
+    <div class="title-block"><h1>Monthly Money Review</h1><div class="sub">Reflect, learn, and grow</div></div>
+    <div class="meta"><span class="field">Month <span></span></span><span class="field">Year <span style="min-width:50px"></span></span></div>
+  </div>
+
+  <div class="review-section">
+    <div class="review-label">What went well this month?</div>
+    <span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span>
+  </div>
+  <div class="review-section">
+    <div class="review-label">What could I improve?</div>
+    <span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span>
+  </div>
+  <div class="review-section">
+    <div class="review-label">Unexpected expenses</div>
+    <span class="line"></span><span class="line"></span><span class="line"></span>
+  </div>
+  <div class="review-section">
+    <div class="review-label">Am I on track with my goals?</div>
+    <div style="padding:10px 0;font-size:13px;">
+      <span class="cb"></span> Yes, exactly where I need to be &nbsp;&nbsp;
+      <span class="cb"></span> Close, with minor adjustments &nbsp;&nbsp;
+      <span class="cb"></span> Off track &mdash; need to recalibrate
+    </div>
+  </div>
+  <div class="review-section">
+    <div class="review-label">Next Month's Top 3 Financial Priorities</div>
+    <div style="padding:6px 0;"><strong style="color:var(--color-primary);">1.</strong><span class="line" style="display:inline-block;width:94%;margin-left:8px;"></span></div>
+    <div style="padding:6px 0;"><strong style="color:var(--color-primary);">2.</strong><span class="line" style="display:inline-block;width:94%;margin-left:8px;"></span></div>
+    <div style="padding:6px 0;"><strong style="color:var(--color-primary);">3.</strong><span class="line" style="display:inline-block;width:94%;margin-left:8px;"></span></div>
+  </div>
+  <div class="review-section">
+    <div class="review-label">Notes &amp; Lessons Learned</div>
+    <span class="line"></span><span class="line"></span><span class="line"></span>
+  </div>
+</div>
+
+<!-- ========== PAGE 16: THANK YOU ========== -->
+<div class="page thank-you">
+  <div class="border-box">
+    <h1>Thank You!</h1>
+    <div class="heart">&#9825;</div>
+    <p style="font-size:16px;">Thank you for your purchase!</p>
+    <div class="divider"></div>
+    <p>If you love this planner, a <strong>5-star review</strong> would mean the world to us.</p>
+    <p>Your review helps small creators like us keep making products you'll love.</p>
+    <div class="divider"></div>
+    <p class="small">Wishing you financial peace &amp; prosperity</p>
+    <p class="small">in every month ahead.</p>
+  </div>
+</div>
+
+</body>
+</html>
