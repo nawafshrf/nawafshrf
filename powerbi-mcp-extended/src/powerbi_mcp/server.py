@@ -14,7 +14,7 @@ import sys
 
 from mcp.server import FastMCP
 
-from .tools import workspaces, reports, dashboards, datasets, dax, analysis, report_builder
+from .tools import workspaces, reports, dashboards, datasets, dax, analysis, report_builder, ai_assistant
 
 logging.basicConfig(
     level=logging.INFO,
@@ -38,7 +38,12 @@ mcp = FastMCP(
         "write operations (create tables, measures, relationships). Use both together for "
         "full coverage.\n\n"
         "PBIR Report Builder: create_report_definition → add_page_to_report → "
-        "add_visual_to_page → save_report_as_pbir → open with powerbi-desktop-mcp."
+        "add_visual_to_page → save_report_as_pbir → open with powerbi-desktop-mcp.\n\n"
+        "AI Assistant (requires ANTHROPIC_API_KEY): generate_dax_measure (natural language "
+        "→ DAX), suggest_report_layout (schema → page/visual plan), "
+        "analyze_report_screenshot (vision analysis of canvas PNG), "
+        "optimize_dax_with_ai (deep AI-driven DAX optimization), "
+        "chat_with_data (NL Q&A → auto-generated EVALUATE query)."
     ),
 )
 
@@ -50,6 +55,7 @@ datasets.register(mcp)
 dax.register(mcp)
 analysis.register(mcp)
 report_builder.register(mcp)
+ai_assistant.register(mcp)
 
 logger.info("Registered %d tools", len(mcp.list_tools()))
 
